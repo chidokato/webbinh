@@ -1,0 +1,58 @@
+.broker-cover {position: relative;}
+.broker-cover-content {position:absolute;top: 28px;bottom: 0;left: 0;right: 0;margin: auto;color: #fff;}
+.broker-content-wrap {display: flex;/* flex-wrap: wrap; *//* margin-top: 28px; */}
+.broker-content-wrap .avatar {width: 128px; flex: 0 0 auto; position:relative}
+.broker-content-wrap .avatar::before  {content:'';width:32px;height:32px;background:url(../images/ico-vip.png) no-repeat center center;background-size:cover;position:absolute;right: 7px;z-index: 2;}
+.broker-content-wrap .avatar img {border-radius: 50%; border:2px solid var(--sub-color); box-sizing:border-box}
+.broker-content-body {padding-left: 24px;}
+
+
+.broker-info {display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; color:rgba(255,255,255,.72); flex-wrap: wrap; font-size:14px}
+.broker-info span {flex: 0 0 100%; display: flex; margin-bottom: 6px; align-items:center}
+.broker-info span i {margin-top:2px; font-size:16px}
+
+.broker-header {display: flex; align-items: start;}
+.broker-header h4 {text-transform:uppercase; font-weight:bold; font-size:22px}
+.broker-header span {background-color: var(--sub-color);padding: 0px 9px 1px;border-radius: 2px;font-size: 13px;margin-left: 8px;margin-top: 6px;}
+
+.broker-cover-content .btn-outline {color:#fff;border-color:var(--sub-color);background-color:var(--sub-color);padding: 5px 20px 6px;}
+
+.broker-cover .search-input {height:auto; border-radius:5px}
+.broker-cover .search-input .form-control {height: 36px;}
+.broker-cover .search-input .input-group-text {background-color:var(--main-color); color:#fff; border-radius:0 3px 3px 0}
+
+
+
+
+
+@media (min-width: 769px) {
+    .broker-cover-content .btn-outline {width:auto; margin-left: 152px;}
+}
+
+@media (max-width: 1024px) {
+    .broker-cover picture {display:none;}
+    .broker-cover .broker-cover-content {background: url(../images/cover-broker-detail.jpg) no-repeat center top;background-size: cover;position: static;padding: 32px 0;}
+    .broker-cover .broker-cover-content .broker-content-wrap {margin-bottom: 24px;}
+}
+
+@media (max-width: 768px) {
+    .broker-content-wrap .avatar {width: 30%;max-width: 140px;}
+    .broker-header {flex-wrap:wrap}
+    .broker-header h4 {flex:0 0 100%;font-size: 16px;letter-spacing: -.3px;}
+    .broker-header span {margin-left: 0;margin-bottom: 10px;}
+    .broker-content-body {padding-left:12px}
+
+    .broker-cover-content {top:0;display: flex;align-items: center;}
+
+    .primary-title h3 {line-height:1.1;font-size: 7vw;letter-spacing: -.4px;}
+    .primary-title .cover-title-filled {bottom:8px}
+    .primary-title h3:after {bottom: -10px;}
+}
+
+@media (max-width: 320px) {
+    .broker-content-wrap .avatar::before {width: 24px;height: 24px;}
+}
+
+
+
+

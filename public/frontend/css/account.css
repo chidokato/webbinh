@@ -1,0 +1,24 @@
+.account-form {height:100vh; background: url('../images/bg-account.png') no-repeat bottom right; background-size: 600px;}
+
+.figure-account img {position: relative; box-shadow: 12px 12px 40px rgba(0,0,0,.3);}
+.figure-account.outline-effect::before {top: 8px; bottom: -4px; right: -4px; left: 8px; opacity: 1;}
+
+.load-more {display:flex; justify-content:center}
+.load-more .cta-btn {}
+.openID {width:48px;height:48px;font-size:48px;display:flex;justify-content: center;align-items: center;border: 1.5px solid;border-radius: 6px;margin-left: 6px;background: #fff;}
+.openID.fb {border-color: #0a5597;color: #0a5597; margin-left: 12px;}
+.openID.gg {border-color: #e0781c;}
+.openID.gg img {width:30px;}
+
+.primary-title h3 {top:-12px}
+
+
+@media (max-width: 768px) {
+    .primary-form {width: 100%;}
+    .load-more .cta-btn a {height: 48px;}
+    .primary-form .form-control {border-radius: 0 !important;}
+    .account-form {background-size: 420px;}
+    .navbar-brand img {width: 128px;}
+    .primary-title h3 {font-size: 32px;}
+    .primary-title .cover-title-filled {font-size: 20px; bottom: -4px;}
+}
