@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 15, 2022 lúc 12:35 PM
+-- Thời gian đã tạo: Th7 23, 2022 lúc 06:41 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `thietke`
+-- Cơ sở dữ liệu: `webbinh`
 --
 
 -- --------------------------------------------------------
@@ -57,7 +57,8 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `category_id`, `category_sku`, `user_id`, `seo_id`, `product_id`, `sort_by`, `sku`, `name`, `style`, `img`, `img2`, `option_id`, `hits`, `hot`, `tag`, `status`, `content`, `detail`, `slug`, `created_at`, `updated_at`) VALUES
-(266, 154, NULL, 1, 185, NULL, '2', 'I4dVtwcc', 'banner dự án roman', NULL, '1656857532102-847799256.png', NULL, 'dqq1yNbX,1m0bmA4D,nhvwAGxE', 50, NULL, NULL, 'true', '<p>ghi g&igrave; cũng đc</p>', NULL, 'banner-du-an-roman', '2022-07-15 10:30:41', '2022-07-15 10:30:41');
+(272, 155, NULL, 12, 191, NULL, '2', 'FZahzbIj', 'Real estate home sale social media post and web banner template', NULL, 'bảng hàng PC.png', NULL, 'JFtJ3pAo,qAjwhNJF,oAQXT8Ok,gscACgm1', 50, NULL, NULL, 'true', NULL, NULL, 'sdfsd-asdfasfs-a-sdfsf', '2022-07-20 07:32:42', '2022-07-20 08:49:46'),
+(273, 156, NULL, 12, 192, NULL, '2', 'V49YRdaT', 'sdfsdf sdfsaf', NULL, '4725312a652aa774fe3b.jpg', NULL, 'JFtJ3pAo,qAjwhNJF,oAQXT8Ok', 50, NULL, NULL, 'true', NULL, NULL, 'sdfsdf-sdfsaf', '2022-07-20 09:01:47', '2022-07-20 09:01:47');
 
 -- --------------------------------------------------------
 
@@ -141,10 +142,10 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `user_id`, `seo_id`, `sku`, `name`, `img`, `sort_by`, `slug`, `parent`, `view`, `icon`, `status`, `content`, `hits`, `hot`, `created_at`, `updated_at`) VALUES
-(154, 1, 170, 'KCNcitYn', 'Ai', NULL, NULL, 'ai', NULL, NULL, NULL, 'true', NULL, 50, NULL, '2022-07-15 08:29:27', '2022-07-15 08:29:27'),
-(155, 1, 171, 'Zf9wIKpm', 'Psd', NULL, NULL, 'psd', NULL, NULL, NULL, 'true', NULL, 50, NULL, '2022-07-15 08:37:07', '2022-07-15 08:37:07'),
-(156, 1, 172, 'r17fYtND', 'IPG', NULL, NULL, 'ipg', NULL, NULL, NULL, 'true', NULL, 50, NULL, '2022-07-15 08:37:16', '2022-07-15 08:37:16'),
-(157, 1, 184, 'OdqUoVHL', 'Media', NULL, NULL, 'media', NULL, NULL, NULL, 'true', NULL, 50, NULL, '2022-07-15 10:29:14', '2022-07-15 10:29:14');
+(159, 1, 194, 'dcLMS7qZ', 'Về chúng tôi', NULL, 3, 've-chung-toi', 0, NULL, NULL, 'true', NULL, 50, NULL, '2022-07-22 10:01:46', '2022-07-22 10:01:46'),
+(158, 1, 193, 'yjQ9y5Nw', 'Sửa chữa trục chính', NULL, 2, 'sua-chua-truc-chinh', 0, NULL, NULL, 'true', NULL, 50, NULL, '2022-07-22 10:00:32', '2022-07-22 10:00:32'),
+(160, 1, 195, 'oD4lGgtl', 'Tổng quan công cty', NULL, 3, 'tong-quan-cong-cty', 159, NULL, NULL, 'true', NULL, 50, NULL, '2022-07-22 10:02:17', '2022-07-22 10:02:30'),
+(161, 1, 196, 'M6gAl8GU', 'Cơ sở dữ liệu', NULL, 3, 'co-so-du-lieu', 159, NULL, NULL, 'true', NULL, 50, NULL, '2022-07-22 10:02:46', '2022-07-22 10:02:46');
 
 -- --------------------------------------------------------
 
@@ -978,6 +979,32 @@ INSERT INTO `form` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `home`
+--
+
+CREATE TABLE `home` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `links` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `detail` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `home`
+--
+
+INSERT INTO `home` (`id`, `name`, `links`, `detail`, `content`, `img`, `status`, `note`, `created_at`, `updated_at`) VALUES
+(1, 'ádasd', NULL, 'ádasdasd', NULL, '2.png', 'true', NULL, '2022-07-23 02:41:02', '2022-07-23 02:41:02');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `images`
 --
 
@@ -1131,13 +1158,10 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `user_id`, `seo_id`, `sku`, `classify`, `name`, `img`, `sort_by`, `slug`, `parent`, `view`, `icon`, `status`, `content`, `hits`, `hot`, `created_at`, `updated_at`) VALUES
-(182, 1, NULL, 'OnL6ykV4', 'Main menu', 'Tin tức', NULL, NULL, 'tin-tuc', 0, 4, NULL, 'true', NULL, 50, NULL, '2022-04-15 07:02:31', '2022-04-15 07:22:18'),
-(181, 1, NULL, 'nMTKq5uf', 'Main menu', 'Biệt thự', NULL, NULL, 'biet-thu', 0, 3, NULL, 'true', NULL, 50, NULL, '2022-04-15 07:02:26', '2022-04-15 07:22:15'),
-(180, 1, NULL, 'tGfFJuUw', 'Main menu', 'Đất nền', NULL, NULL, 'dat-nen', 0, 2, NULL, 'true', NULL, 50, NULL, '2022-04-15 07:02:20', '2022-04-15 07:22:14'),
-(179, 1, NULL, 'wQbbJN4g', 'Main menu', 'Chung cư', NULL, NULL, 'chung-cu', 0, 1, NULL, 'true', NULL, 50, NULL, '2022-04-15 07:02:13', '2022-04-15 07:22:12'),
-(183, 1, NULL, '0Ri43e1d', 'Main menu', 'Tin tức về dự án', NULL, NULL, 'tin-tuc-ve-du-an', 182, 2, NULL, 'true', NULL, 50, NULL, '2022-05-07 04:09:51', '2022-05-07 04:20:48'),
-(184, 1, NULL, 'PmK6yE2i', 'Main menu', 'Thị trường bất động sản', NULL, NULL, 'thi-truong-bat-dong-san', 182, 1, NULL, 'true', NULL, 50, NULL, '2022-05-07 04:10:05', '2022-05-07 04:20:48'),
-(185, 1, NULL, 'eTziQhKo', 'Main menu', 'Liên hệ', NULL, NULL, 'lien-he', 0, 5, NULL, 'true', NULL, 50, NULL, '2022-05-07 04:20:41', '2022-05-07 04:20:46');
+(189, 1, NULL, 'iZc0z3l6', 'Main menu', 'Sửa chữa trục chính', NULL, NULL, 'sua-chua-truc-chinh', 187, NULL, NULL, 'true', NULL, 50, NULL, '2022-07-22 09:45:34', '2022-07-22 09:45:34'),
+(187, 1, NULL, 'dfxuaYPO', 'Main menu', 'Bán hàng nhập khẩu', NULL, NULL, 'ban-hang-nhap-khau', 0, 2, NULL, 'true', NULL, 50, NULL, '2022-07-22 09:44:36', '2022-07-22 09:44:52'),
+(188, 1, NULL, 'pBuRhWlm', 'Main menu', 'Liên hệ', NULL, NULL, 'lien-he', 0, 3, NULL, 'true', NULL, 50, NULL, '2022-07-22 09:44:46', '2022-07-22 09:44:53'),
+(186, 1, NULL, 'QObU62lD', 'Main menu', 'Sửa chữa trục chính', NULL, NULL, 'sua-chua-truc-chinh', 0, 1, NULL, 'true', NULL, 50, NULL, '2022-07-22 09:44:21', '2022-07-22 09:44:50');
 
 -- --------------------------------------------------------
 
@@ -1208,7 +1232,7 @@ CREATE TABLE `option` (
   `user_id` int(11) DEFAULT NULL,
   `seo_id` int(11) DEFAULT NULL,
   `sku` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `sort_by` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
@@ -1239,7 +1263,9 @@ INSERT INTO `option` (`id`, `user_id`, `seo_id`, `sku`, `name`, `img`, `sort_by`
 (168, 1, NULL, 'cVpeLwKd', 'Nhà Ở Ngay', NULL, 'chinhanh', 'nha-o-ngay', NULL, NULL, 'true', NULL, 50, NULL, '2022-07-15 10:29:26', '2022-07-15 10:29:26'),
 (169, 1, NULL, 'oAQXT8Ok', 'Tờ tư vấn', NULL, 'theloai', 'to-tu-van', NULL, NULL, 'true', NULL, 50, NULL, '2022-07-15 10:29:40', '2022-07-15 10:29:40'),
 (170, 1, NULL, '1m0bmA4D', 'Banner facebook', NULL, 'theloai', 'banner-facebook', NULL, NULL, 'true', NULL, 50, NULL, '2022-07-15 10:29:50', '2022-07-15 10:29:50'),
-(171, 1, NULL, 'dqq1yNbX', 'Roman Plaza', NULL, 'duan', 'roman-plaza', NULL, NULL, 'true', NULL, 50, NULL, '2022-07-15 10:30:00', '2022-07-15 10:30:00');
+(171, 1, NULL, 'dqq1yNbX', 'Roman Plaza', NULL, 'duan', 'roman-plaza', NULL, NULL, 'true', NULL, 50, NULL, '2022-07-15 10:30:00', '2022-07-15 10:30:00'),
+(172, 1, NULL, 'eFxj4OlQ', 'Các loại khác (Booth trực, Bus, T shirt ...)', NULL, 'theloai', 'cac-loai-khac-booth-truc-bus-t-shirt-', NULL, NULL, 'true', NULL, 50, NULL, '2022-07-22 05:20:13', '2022-07-22 05:20:13'),
+(173, 1, NULL, 'goXhAysX', 'Banner online (Face, Web)', NULL, 'theloai', 'banner-online-face-web-', NULL, NULL, 'true', NULL, 50, NULL, '2022-07-22 05:20:26', '2022-07-22 05:20:26');
 
 -- --------------------------------------------------------
 
@@ -1509,6 +1535,7 @@ INSERT INTO `quanlykho` (`id`, `articles_id`, `mausac_id`, `form_id`, `size`, `t
 CREATE TABLE `section` (
   `id` int(11) NOT NULL,
   `articles_id` int(11) DEFAULT NULL,
+  `home_id` int(11) DEFAULT NULL,
   `name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `policy` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1526,9 +1553,18 @@ CREATE TABLE `section` (
 -- Đang đổ dữ liệu cho bảng `section`
 --
 
-INSERT INTO `section` (`id`, `articles_id`, `name`, `content`, `policy`, `img`, `heading`, `tab_heading`, `slug`, `number`, `note`, `created_at`, `updated_at`) VALUES
-(96, 266, 'http://localhost/www/thietke/public/admin/news/add', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-15 10:30:41', '2022-07-15 10:30:41'),
-(97, 266, 'http://localhost/www/thietke/public/admin/news/add', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-15 10:30:41', '2022-07-15 10:30:41');
+INSERT INTO `section` (`id`, `articles_id`, `home_id`, `name`, `content`, `policy`, `img`, `heading`, `tab_heading`, `slug`, `number`, `note`, `created_at`, `updated_at`) VALUES
+(96, 266, NULL, 'http://localhost/www/thietke/public/admin/news/add', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-15 10:30:41', '2022-07-15 10:30:41'),
+(97, 266, NULL, 'http://localhost/www/thietke/public/admin/news/add', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-15 10:30:41', '2022-07-15 10:30:41'),
+(98, 267, NULL, 'http://localhost/www/thietke/public/admin/news/add', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-16 02:05:47', '2022-07-16 02:05:47'),
+(99, 268, NULL, 'http://localhost/www/thietke/public/admin/news/add', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-16 02:06:28', '2022-07-16 02:06:28'),
+(100, 269, NULL, 'http://localhost/www/thietke/public/admin/news/add', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-16 02:06:52', '2022-07-16 02:06:52'),
+(101, 270, NULL, 'aaaaaasdfsdfsdf asfasfsadfasdf sadfasdfsafa sdfasdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-16 02:07:19', '2022-07-16 02:07:19'),
+(102, 271, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-16 02:08:03', '2022-07-16 02:08:03'),
+(103, 272, NULL, 'ádadasd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-20 07:32:42', '2022-07-20 08:29:30'),
+(104, 272, NULL, 'ádasdasd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-20 08:29:30', '2022-07-20 08:29:30'),
+(105, 273, NULL, 'sdfsdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-20 09:01:47', '2022-07-20 09:01:47'),
+(106, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-23 02:41:02', '2022-07-23 02:41:02');
 
 -- --------------------------------------------------------
 
@@ -1552,8 +1588,12 @@ CREATE TABLE `seo` (
 
 INSERT INTO `seo` (`id`, `title`, `description`, `keywords`, `robot`, `created_at`, `updated_at`) VALUES
 (183, 'banner', NULL, NULL, NULL, '2022-07-15 03:24:20', '2022-07-15 03:24:20'),
-(184, NULL, NULL, NULL, NULL, '2022-07-15 03:29:14', '2022-07-15 03:29:14'),
-(185, 'banner dự án roman', NULL, NULL, NULL, '2022-07-15 03:30:41', '2022-07-15 03:30:41');
+(191, 'Real estate home sale social media post and web banner template', NULL, NULL, NULL, '2022-07-20 00:32:41', '2022-07-20 00:56:28'),
+(192, 'sdfsdf sdfsaf', NULL, NULL, NULL, '2022-07-20 02:01:46', '2022-07-20 02:01:46'),
+(193, NULL, NULL, NULL, NULL, '2022-07-22 03:00:32', '2022-07-22 03:00:32'),
+(194, NULL, NULL, NULL, NULL, '2022-07-22 03:01:46', '2022-07-22 03:01:46'),
+(195, NULL, NULL, NULL, NULL, '2022-07-22 03:02:17', '2022-07-22 03:02:17'),
+(196, NULL, NULL, NULL, NULL, '2022-07-22 03:02:46', '2022-07-22 03:02:46');
 
 -- --------------------------------------------------------
 
@@ -33398,9 +33438,10 @@ CREATE TABLE `themes` (
 --
 
 INSERT INTO `themes` (`id`, `user_id`, `img`, `name`, `title`, `content`, `status`, `button`, `note`, `link`, `created_at`, `updated_at`) VALUES
-(3, 1, 'nhadatvn.png', 'logo', NULL, NULL, 'true', NULL, 'logo', NULL, '2022-03-11 06:36:25', '2022-04-14 09:51:17'),
+(3, 1, 'main-logo.png', 'logo', NULL, NULL, 'true', NULL, 'logo', NULL, '2022-03-11 06:36:25', '2022-07-22 09:46:26'),
 (4, 1, 'gyOB_nhadatvn.png', 'logo trắng', NULL, NULL, 'true', NULL, 'logo ân bản', NULL, '2022-03-11 08:12:35', '2022-04-14 09:52:19'),
-(9, 1, 'tam-quan-trong-quan-ly-toa-nha.jpg', 'nova', NULL, NULL, 'true', NULL, 'Slider', NULL, '2022-04-28 04:58:44', '2022-06-03 07:17:41');
+(9, 1, 'banner2.jpg', 'nova', NULL, NULL, 'true', NULL, 'Slider', NULL, '2022-04-28 04:58:44', '2022-07-22 09:47:09'),
+(10, 1, 'banner1.jpg', 'ádasd', NULL, NULL, 'true', NULL, 'Slider', NULL, '2022-07-22 09:47:23', '2022-07-22 09:47:23');
 
 -- --------------------------------------------------------
 
@@ -33410,7 +33451,8 @@ INSERT INTO `themes` (`id`, `user_id`, `img`, `name`, `title`, `content`, `statu
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `option_id` int(11) DEFAULT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `permission` int(11) NOT NULL,
   `avatar` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -33429,8 +33471,10 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `password`, `permission`, `avatar`, `your_name`, `email`, `birthday`, `facebook`, `phone`, `address`, `created_at`, `updated_at`, `remember_token`) VALUES
-(1, 'Admin', '$2y$10$zOy1EGPDyee87rGqheVTtegITNloa/Aqe6XWWLxJ1xTIKGClUE44q', 0, 'Xh1x_61104c14b9eb75b52cfa.jpg', 'Nguyễn Văn Tuấn', 'tuan.pn92@gmail.com', '1992-01-20', 'https://www.facebook.com/tuannv.official/', '0977572947', NULL, '2018-06-05 11:56:18', '2022-04-29 02:19:35', 'Z6uj0zEmgidqyrfuj3xh3ub4ZoO9D0znbjQJiYqkHAJ5k7O9xu70T2He1YA0');
+INSERT INTO `users` (`id`, `option_id`, `name`, `password`, `permission`, `avatar`, `your_name`, `email`, `birthday`, `facebook`, `phone`, `address`, `created_at`, `updated_at`, `remember_token`) VALUES
+(1, 168, 'Admin', '$2y$10$zOy1EGPDyee87rGqheVTtegITNloa/Aqe6XWWLxJ1xTIKGClUE44q', 0, 'Xh1x_61104c14b9eb75b52cfa.jpg', 'Nguyễn Văn Tuấn', 'tuan.pn92@gmail.com', '1992-01-20', 'https://www.facebook.com/tuannv.official/', '0977572947', NULL, '2018-06-05 11:56:18', '2022-07-15 21:49:22', 'qUJxkyDDcRloUxarK6oAao4RXHczUVP7AbukbSTgcZkc6qYyFWFe7XpLMoBN'),
+(12, 159, NULL, '$2y$10$WVfXDcPIUhEa8Dah2iuCSeAF/UCjXbdTbzNHOOM/eSHhEqdX5oK5y', 0, '4725312a652aa774fe3b.jpg', 'Bác Linh', 'linhdt@dxmb.vn', NULL, NULL, '1111111111', NULL, '2022-07-20 00:21:58', '2022-07-22 01:32:56', 'zGOMUd9NurgFRciXtJbWQpzGuHPKrDRWmSrJGkWeMKfz0YnkDSdNIKaWPQpI'),
+(13, 168, NULL, '$2y$10$q4Tqd0rakGCkhHGwdHAN7.8NjRrYZV/hFUgKmtTB/0iAvlXm1Yn.q', 1, NULL, 'Nguyễn Tuấn', 'tuannv2@dxmb.vn', NULL, NULL, NULL, NULL, '2022-07-22 00:23:27', '2022-07-22 00:23:27', NULL);
 
 -- --------------------------------------------------------
 
@@ -44796,6 +44840,12 @@ ALTER TABLE `form`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `home`
+--
+ALTER TABLE `home`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `images`
 --
 ALTER TABLE `images`
@@ -44931,7 +44981,7 @@ ALTER TABLE `ward`
 -- AUTO_INCREMENT cho bảng `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=267;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=274;
 
 --
 -- AUTO_INCREMENT cho bảng `banhang`
@@ -44943,7 +44993,7 @@ ALTER TABLE `banhang`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT cho bảng `channel`
@@ -44976,6 +45026,12 @@ ALTER TABLE `form`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT cho bảng `home`
+--
+ALTER TABLE `home`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
@@ -44997,7 +45053,7 @@ ALTER TABLE `mausac`
 -- AUTO_INCREMENT cho bảng `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=190;
 
 --
 -- AUTO_INCREMENT cho bảng `messages`
@@ -45015,7 +45071,7 @@ ALTER TABLE `nhaphang`
 -- AUTO_INCREMENT cho bảng `option`
 --
 ALTER TABLE `option`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT cho bảng `order`
@@ -45045,13 +45101,13 @@ ALTER TABLE `quanlykho`
 -- AUTO_INCREMENT cho bảng `section`
 --
 ALTER TABLE `section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT cho bảng `seo`
 --
 ALTER TABLE `seo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
 
 --
 -- AUTO_INCREMENT cho bảng `setting`
@@ -45087,13 +45143,13 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT cho bảng `themes`
 --
 ALTER TABLE `themes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `ward`
