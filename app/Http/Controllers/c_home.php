@@ -104,50 +104,30 @@ class c_home extends Controller
         return redirect('admin/home/list')->with('Alerts','Thành công');
     }
 
-    public function double($id)
-    {
-        $double = 'double';
-        $data = articles::findOrFail($id);
-        $seo = seo::findOrFail($data['seo_id']);
-        $category = category::orderBy('id','desc')->get();
-        return view('admin.home.addedit',[
-            'data'=>$data,
-            'category'=>$category,
-            'seo'=>$seo,
-            'double'=>$double,
-        ]);
-    }
-    
     public function getedit($id)
     {
-        $data = articles::findOrFail($id);
-        $seo = seo::findOrFail($data['seo_id']);
-        $category = category::orderBy('id','desc')->get();
+        $data = home::findOrFail($id);
         $option = option::orderBy('id','desc')->get();
         return view('admin.home.addedit',[
             'data'=>$data,
-            'category'=>$category,
-            'seo'=>$seo,
             'option'=>$option,
         ]);
     }
 
     public function postedit(Request $Request,$id)
     {
-        $articles = articles::find($id);
-        $articles->name = $Request->name;
-        $articles->slug = $Request->slug;
-        $articles->detail = $Request->detail;
-        $articles->content = $Request->content;
-        $articles->category_id = $Request->cat_id;
-        $articles->style = $Request->style;
-        if(isset($Request->option)){ $articles->option_id = implode(',', $Request->option); } else { $articles->option_id = ''; }
+        $home = home::find($id);
+        $home->name = $Request->name;
+        $home->links = $Request->links;
+        $home->detail = $Request->detail;
+        $home->content = $Request->content;
+
         if ($Request->hasFile('img')) {
             // xóa ảnh cũ
-            if(File::exists('data/home/'.$articles->img)) { 
-                File::delete('data/home/'.$articles->img); 
-                File::delete('data/home/300/'.$articles->img); 
-                File::delete('data/home/80/'.$articles->img); 
+            if(File::exists('data/home/'.$home->img)) { 
+                File::delete('data/home/'.$home->img); 
+                File::delete('data/home/300/'.$home->img); 
+                File::delete('data/home/80/'.$home->img); 
             }
             // xóa ảnh cũ
             // thêm ảnh mới
@@ -156,28 +136,17 @@ class c_home extends Controller
             while(file_exists("data/home/300/".$filename)){ $filename = str_random(4)."_".$filename; }
             $img = Image::make($file)->resize(1000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
             $img = Image::make($file)->resize(300, 300, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/300/'.$filename));
-            $img = Image::make($file)->resize(80, 80, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/80/'.$filename));
-            $articles->img = $filename;
+            $home->img = $filename;
             // thêm ảnh mới
         }
-        $articles->save();
+        $home->save();
         
-        $seo = seo::find($articles->seo_id);
-        if ($Request->title == "") {
-            $seo->title = $Request->name;
-        }else{
-            $seo->title = $Request->title;
-        }
-        $seo->description = $Request->description;
-        $seo->keywords = $Request->keywords;
-        $seo->robot = $Request->robot;
-        $seo->save();
-
         if ($Request->name_section) {
-            foreach($Request->name_section as $val){
+            foreach($Request->name_section as $key => $val){
                 $section = new section;
-                $section->articles_id = $articles->id;
+                $section->home_id = $home->id;
                 $section->name = $val;
+                $section->content = $Request->content_section[$key];
                 $section->save();
             }
         }
@@ -185,7 +154,8 @@ class c_home extends Controller
         if ($Request->section_id) {
             foreach($Request->section_id as $key => $sec_id){
                 $section = section::find($sec_id);
-                $section->name = $Request->name_section_edit[$key];
+                $section->name = $Request->name_edit_section[$key];
+                $section->content = $Request->content_edit_section[$key];
                 $section->save();
             }
         }
@@ -195,19 +165,15 @@ class c_home extends Controller
 
     public function getdelete($id)
     {
-        $articles = articles::find($id);
+        $home = home::find($id);
         
-        $seo = seo::find($articles->seo_id);
-        $seo->delete();
-
         // xóa ảnh
-        if(File::exists('data/home/'.$articles->img)) {
-            File::delete('data/home/'.$articles->img);
-            File::delete('data/home/300/'.$articles->img);
-            File::delete('data/home/80/'.$articles->img);
+        if(File::exists('data/home/'.$home->img)) {
+            File::delete('data/home/'.$home->img);
+            File::delete('data/home/300/'.$home->img);
         }
         // xóa ảnh
-        $articles->delete();
+        $home->delete();
         return redirect('admin/home/list')->with('Alerts','Thành công');
     }
 
