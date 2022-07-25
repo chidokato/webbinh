@@ -47,14 +47,14 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label style="display: flex;">Links</label> 
-                            <input value="{{ isset($data) ? $data->links : '' }}{{old('links')}}" name="links" placeholder="Links" type="text" class="form-control">
+                            <textarea rows="5" name="links" class="form-control">{{ isset($data) ? $data->links : '' }}</textarea>
                         </div>
                     </div>
                     
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Mô tả ngắn</label>
-                            <textarea rows="3" name="detail" class="form-control">{{ isset($data) ? $data->detail : '' }}</textarea>
+                            <textarea rows="5" name="detail" class="form-control">{{ isset($data) ? $data->detail : '' }}</textarea>
                         </div>
                     </div>
                 </div>

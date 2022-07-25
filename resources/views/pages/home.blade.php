@@ -119,6 +119,23 @@
 	</div>
 </section>
 
+@elseif($key==3)
+
+<!------------------- ESTIMATE ------------------->
+<section class="sec-tcg">
+	<div class="row g-0">
+		<div class="col-lg-6">
+			{{ $home->link }}
+		</div>
+	</div>
+	<div class="container">
+		<div class="tcg-content primary-title">
+			<h3 class="title-home">{{ $home->name }}</h3>
+			{!! $home->detail !!}
+		</div>
+	</div>
+</section>
+
 @endif
 
 @endforeach
@@ -129,24 +146,7 @@
 
 
 
-<!------------------- ESTIMATE ------------------->
-<section class="sec-tcg">
-	<div class="row g-0">
-		<div class="col-lg-6">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6402.655761566034!2d127.437198!3d36.642562!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356528f0b96c996f%3A0xca27b8fec2368610!2s134%20Gongdan-ro%2C%20Heungdeok-gu%2C%20Cheongju%2C%20Chungcheongbuk-do%2C%20H%C3%A0n%20Qu%E1%BB%91c!5e0!3m2!1svi!2sus!4v1658237026669!5m2!1svi!2sus" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-		</div>
-	</div>
-	<div class="container">
-		<div class="tcg-content primary-title">
-			<h3 class="title-home">Liên hệ ngay</h3>
-			<p>본사 : [28576] 충북 청주시 흥덕구 공단로 134, 세중테크노밸리 404호</p>
-			<p>TEL : 043-263-3705</p>
-			<p>FAX : 043-263-3706</p>
-			<p>E-MAIL : 1972sds@hanmail.net</p>
-			<p>문의 및 상담 : +82 010-6526-3705｜+82 010-6210-6500</p>
-		</div>
-	</div>
-</section>
+
 
 @endsection
 
