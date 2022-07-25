@@ -85,7 +85,7 @@ class c_home extends Controller
             $file = $Request->file('img');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/home/300/".$filename)){ $filename = str_random(4)."_".$filename; }
-            $img = Image::make($file)->resize(1000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
+            $img = Image::make($file)->resize(2000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
             $img = Image::make($file)->resize(300, 300, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/300/'.$filename));
             $home->img = $filename;
         }
@@ -102,7 +102,7 @@ class c_home extends Controller
                     $file = $Request->file('img_section')[$key];
                     $filename = $file->getClientOriginalName();
                     while(file_exists("data/home/300/".$filename)){ $filename = str_random(4)."_".$filename; }
-                    $img = Image::make($file)->resize(1000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
+                    $img = Image::make($file)->resize(2000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
                     $img = Image::make($file)->resize(300, 300, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/300/'.$filename));
                     $section->img = $filename;
                 }
@@ -144,7 +144,7 @@ class c_home extends Controller
             $file = $Request->file('img');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/home/300/".$filename)){ $filename = str_random(4)."_".$filename; }
-            $img = Image::make($file)->resize(1000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
+            $img = Image::make($file)->resize(2000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
             $img = Image::make($file)->resize(300, 300, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/300/'.$filename));
             $home->img = $filename;
             // thêm ảnh mới
@@ -160,7 +160,7 @@ class c_home extends Controller
                     $file = $Request->file('img_section')[$key];
                     $filename = $file->getClientOriginalName();
                     while(file_exists("data/home/300/".$filename)){ $filename = str_random(4)."_".$filename; }
-                    $img = Image::make($file)->resize(1000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
+                    $img = Image::make($file)->resize(2000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
                     $img = Image::make($file)->resize(300, 300, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/300/'.$filename));
                     $section->img = $filename;
                 }
@@ -183,7 +183,7 @@ class c_home extends Controller
                         $file = $Request->file('img_edit_section')[$key];
                         $filename = $file->getClientOriginalName();
                         while(file_exists("data/home/300/".$filename)){ $filename = str_random(4)."_".$filename; }
-                        $img = Image::make($file)->resize(1000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
+                        $img = Image::make($file)->resize(2000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
                         $img = Image::make($file)->resize(300, 300, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/300/'.$filename));
                         $section->img = $filename;
                     }
