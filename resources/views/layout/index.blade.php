@@ -48,7 +48,6 @@
 
 @yield('content')
 
-@include('layout.footer')
 
 <!------------------- JS core------------------->
 @yield('script')

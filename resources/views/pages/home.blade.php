@@ -62,12 +62,12 @@
 						@foreach($home->section as $val)
 						<div class="swiper-slide">
 							<div class="card card-s card-s4">
-								<a href="">
+								<a href="{{$val->link}}">
 									<span><img src="frontend/images/space-3.gif" class="card-img-top" style="background-image: url('data/home/{{$val->img}}');" alt="..."></span>
 								</a>
 								<div class="card-body">
 									<div class="card-body-wrap">
-										<h2 class="card-title"><a href="" class="text-truncate">{{$val->name}}</a></h2>
+										<h2 class="card-title"><a href="{{$val->link}}" class="text-truncate">{{$val->name}}</a></h2>
 										<div class="card-info">
 											<span><i class="me-2"></i>
 												{!! $val->content !!}

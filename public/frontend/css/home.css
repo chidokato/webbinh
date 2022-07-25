@@ -228,7 +228,7 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
     .sec-tcg > .row {position:absolute; top:0; bottom:0; left:0; right:50%; overflow:hidden}
     .sec-tcg > .row > * {width:100%;}
     .sec-tcg .container {display: flex;flex-wrap: wrap;justify-content: flex-end;}
-    .sec-tcg .tcg-content {flex: 0 0 auto;width: 50%;padding: 44px 0 20px 48px;}
+    .sec-tcg .tcg-content {flex: 0 0 auto;width: 50%;padding: 16px 0 18px 53px;}
 
     .service-slider .swiper-wrapper {flex-wrap:wrap;}
     .service-slider .swiper-slide {width:100% !important}
@@ -347,7 +347,7 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
     .main-ads-slider .swiper-slide .video .container:before {width:52px;height:52px;left: 0;margin: auto;}
     .main-ads-slider .swiper-slide .video .container:after {left: 2px;border-width: 6px 0 6px 10px;right: 0;margin: auto;}
 
-    .sec-why-choose-us .row.g-0 {max-width:88%; margin:auto}
+    .sec-why-choose-us .row.g-0 {margin:auto}
     .reason-item h2 {font-size:28px;margin-bottom: 3px;}
     .reason-item-wrap  {font-size:12px; bottom:8px;}
 
@@ -418,14 +418,13 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
 .sec-why-choose-us .container { z-index: 99999; }
 .sec-why-choose-us .reason-item-wrap {
     color: #0093c8;
-    font-weight: bold;
 }
 .sec-why-choose-us .primary-title{ position: relative; }
 .sec-why-choose-us .primary-title p{ color: #fff; margin-top: 15px; }
 .service-item::before, .reason-item::before {border-width: 10px;}
 .reason-item {background: #fff;}
 .swiper-button-next::after, .swiper-button-prev::after{ color: #ddd; }
-.sec-tcg{min-height: 550px;margin: 30px 0px;}
+.sec-tcg{min-height: 550px;}
 .sec-tcg .tcg-content{ color: #fff; }
 .sec-why-choose-us, .sec-product-sale, .sec-product-rent {
     padding-top: 70px;
@@ -442,4 +441,7 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
 @media (max-width: 480px) {
     .sec-hero .hero-slider, .sec-hero .swiper-slide{ height: 55vh; }
     .swiper-wrapper .swiper-slide .slider-info {top: 7vh; left: 3vh;    width: 85%;}
+    .swiper-wrapper .swiper-slide .slider-info h3{ font-size: 1.4rem; }
+    .primary-title h3{ font-size: 26px; }
+    .sec-tcg iframe{ width: 100%; height: 50vh; }
 }
