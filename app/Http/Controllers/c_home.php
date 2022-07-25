@@ -172,6 +172,7 @@ class c_home extends Controller
             foreach($Request->section_id as $key => $sec_id){
                 $section = section::find($sec_id);
                 $section->name = $Request->name_edit_section[$key];
+                $section->link = $Request->link_edit_section[$key];
                 $section->content = $Request->content_edit_section[$key];
                 if (isset($Request->img_edit_section[$key])) {
                     if ($Request->hasFile('img_edit_section')) {

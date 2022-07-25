@@ -77,18 +77,25 @@
                     <div style="margin-right: 20px;">
                         <div class="row">
                             <div class="col-md-7 form-group">
+                                <label>Name</label>
                                 <input class="form-control" type="text" value="{{$val->name}}" name="name_edit_section[]" placeholder="...">
                             </div>
                             <div class="col-md-5 form-group">
-                                <input class="" type="file" name="img_edit_section[]" placeholder="...">
+                                <label>Images</label>
+                                <input class="form-control" type="file" name="img_edit_section[]" placeholder="...">
                             </div>
                             <div class="col-md-12 form-group">
+                                <label>Links</label>
+                                <input class="form-control" type="text" value="{{$val->link}}" name="link_edit_section[]" placeholder="...">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <label>Content</label>
                                 <textarea name="content_edit_section[]" class="form-control" rows="4">{{$val->content}}</textarea>
                             </div>
                         </div>
                     </div>
                     <div class="">
-                        <img style="max-width: 100%; height: 126px" src="data/home/{{$val->img}}">
+                        <img style="max-width: 100%; height: 253px" src="data/home/{{$val->img}}">
                     </div>
                 </div>
             </div>
