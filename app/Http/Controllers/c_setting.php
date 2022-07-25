@@ -52,6 +52,22 @@ class c_setting extends Controller
             $setting->img = $filename;
             // thêm ảnh mới
         }
+
+        if ($Request->hasFile('thumr_share')) {
+            // xóa ảnh cũ
+            if(File::exists('data/themes/'.$setting->img)) { 
+                File::delete('data/themes/'.$setting->img); 
+            }
+            // xóa ảnh cũ
+            // thêm ảnh mới
+            $file = $Request->file('thumr_share');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/themes/".$filename)){ $filename = str_random(4)."_".$filename; }
+            $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/themes/'.$filename));
+            $setting->thumr_share = $filename;
+            // thêm ảnh mới
+        }
+
         $setting->save();
         return redirect('admin/setting/list')->with('Success','Success');
     }

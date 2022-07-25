@@ -130,6 +130,13 @@
                                 <label >Favicon (<img src="data/themes/{{ $data ? $data->img : '' }}">)</label>
                                 <input type="file" name="favicon" class="form-control">
                             </div>
+                            <div class="col-md-8 form-group">
+                                <label >Thumr share</label>
+                                <input type="file" name="thumr_share" class="form-control">
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <img style="height: 62px;" src="data/themes/{{ $data ? $data->thumr_share : '' }}">
+                            </div>
                             <div class="col-md-12 form-group">
                                 <label >Code header</label>
                                 <textarea class="form-control" id="message" name="codeheader" rows="10" placeholder="Code header">{!! $data['codeheader'] !!}</textarea>

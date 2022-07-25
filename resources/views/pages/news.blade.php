@@ -46,7 +46,7 @@
 			<div class="col-lg-3 d-none d-lg-block">
 
 				<div class="widget widget-list mb-3">
-					<h4><span>Tin tức</span></h4>
+					<h4><span>Nội dung</span></h4>
 					<ul>
 						@foreach($cat_new as $val)
 						<li><a href="{{$val->slug}}"><i class="icon-next me-2"></i>{{$val->name}}</a></li>
