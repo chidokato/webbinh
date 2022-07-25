@@ -21,8 +21,8 @@
 <meta property="og:description" content="@yield('description')" />
 <meta property="og:url" content="@yield('url')" />
 <meta property="og:site_name" content="site_name" />
-<meta property="og:images" content="@yield('img')" />
-<meta property="og:image" content="@yield('img')" />
+<meta property="og:images" content="@yield('images')" />
+<meta property="og:image" content="@yield('images')" />
 <meta property="og:image:alt" content="@yield('title')" />
 <!-- and og -->
 <!-- twitter -->

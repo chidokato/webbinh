@@ -5,6 +5,8 @@
 @section('keywords'){{$head_setting->keywords}}@endsection
 @section('robots'){{ $head_setting->robot == 0 ? 'index, follow' : 'noindex, nofollow' }}@endsection
 @section('url'){{asset('').$head_setting['slug']}}@endsection
+@section('images'){{asset('').'data/themes/'.$head_setting['thumr_share']}}@endsection
+
 
 @section('css')
 <link href="frontend/css/bootstrap.min.css" rel="stylesheet">
