@@ -18,7 +18,7 @@
 <link href="frontend/css/card.css" rel="stylesheet">
 <link href="frontend/css/form.css" rel="stylesheet">
 <link href="frontend/css/simpleLightbox.css" rel="stylesheet">
-<link href="frontend/css/home.css" rel="stylesheet">
+
 @endsection
 @section('content')
 
@@ -115,23 +115,6 @@
 					@endforeach
 				</div>
 			</div>
-		</div>
-	</div>
-</section>
-
-@elseif($key==3)
-
-<!------------------- ESTIMATE ------------------->
-<section class="sec-tcg">
-	<div class="row g-0">
-		<div class="col-lg-6">
-			{!! $home->links !!}
-		</div>
-	</div>
-	<div class="container">
-		<div class="tcg-content primary-title">
-			<h3 class="title-home">{{ $home->name }}</h3>
-			{!! $home->detail !!}
 		</div>
 	</div>
 </section>

@@ -37,6 +37,7 @@
 <!-- ================= Style ================== --> 
 
 @yield('css')
+<link href="frontend/css/home.css" rel="stylesheet">
 <!-- ================= js ================== --> 
 
 {!! $head_setting->codeheader !!}
@@ -48,7 +49,7 @@
 
 @yield('content')
 
-
+@include('layout.footer')
 <!------------------- JS core------------------->
 @yield('script')
 

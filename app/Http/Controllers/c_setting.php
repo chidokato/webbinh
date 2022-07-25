@@ -22,6 +22,7 @@ class c_setting extends Controller
         $setting->name = $Request->name;
         $setting->address = $Request->address;
         $setting->email = $Request->email;
+        $setting->footer = $Request->footer;
         $setting->hotline = $Request->hotline;
         $setting->hotline1 = $Request->hotline1;
         $setting->facebook = $Request->facebook;
