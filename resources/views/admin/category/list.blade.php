@@ -59,7 +59,7 @@
                                     <th>Status</th>
                                     <!-- <th>Home</th> -->
                                     <th>User</th>
-                                    <!-- <th>Sort By</th> -->
+                                    <th>Sort By</th>
                                     <th>date</th>
                                     <th></th>
                                 </tr>
@@ -105,11 +105,11 @@
                             <label class="container"><input <?php if($val->home == 'true'){echo "checked";} ?> type="checkbox" id='home' ><span class="checkmark"></span></label>
                         </td> -->
                         <td>{{$val->user->name}}</td>
-                        <!-- <td>
+                        <td>
                             @if($val->sort_by==1) Product @endif
                             @if($val->sort_by==2) News @endif
                             @if($val->sort_by==3) Pages @endif
-                        </td> -->
+                        </td>
                         <td class="date">{{date('d/m/Y',strtotime($val->created_at))}} <sup title="Sửa lần cuối: {{date('d/m/Y',strtotime($val->updated_at))}}"><i class="fa fa-question-circle-o" aria-hidden="true"></i></sup> </td>
                         <td>
                             <!-- <a href="admin/category/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a> -->

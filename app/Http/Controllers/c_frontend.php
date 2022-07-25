@@ -75,8 +75,8 @@ class c_frontend extends Controller
     {
         $active = $curl;
         $category = category::where('slug',$curl)->first();
-        if ($curl=='gioi-thieu') { $active = 'gioi-thieu'; return view('pages.about',['category'=>$category, 'active'=>$active]); }
-        if ($curl=='lien-he') { $active = 'lien-he'; return view('pages.contact',['category'=>$category, 'active'=>$active]); }
+        // if ($curl=='gioi-thieu') { $active = 'gioi-thieu'; return view('pages.about',['category'=>$category, 'active'=>$active]); }
+        // if ($curl=='lien-he') { $active = 'lien-he'; return view('pages.contact',['category'=>$category, 'active'=>$active]); }
         
         $cates = category::where('parent', $category["id"])->get();
         $cat_array = [$category["id"]];
