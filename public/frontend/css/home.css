@@ -75,7 +75,7 @@
 
 .sec-why-choose-us, .sec-product-sale, .sec-product-rent {padding-top: 56px; padding-bottom: 56px;}
 .reason-item {height: 0;padding-bottom: 100%;border-radius: 50%; display: flex;flex-direction: column;justify-content: center;align-items: center;position: relative;}
-.reason-item::before {border-color: #ddd #ddd var(--sub-color) var(--sub-color);}
+.reason-item::before {border-color: #0093c7 #0093c7 var(--sub-color) var(--sub-color);}
 .reason-item-wrap {display: flex;flex-direction: column;justify-content: center;align-items: center;position: absolute;top: 0;bottom: 0;}
 .reason-item h2 {font-weight: bold;color: var(--main-color);font-size: 40px;}
 .reason-item span.item-number {font-weight: bold;color: var(--main-color);font-size: 40px;margin-bottom: 1.5rem;}
@@ -435,6 +435,7 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
 .swiper-wrapper .swiper-slide .slider-info{ position: absolute; top: 20vh; left: 20vh; color: #fff; z-index: 9999999; width: 400px; }
 .swiper-wrapper .swiper-slide .slider-info h3{ font-size: 2rem; margin-bottom: 25px; border-bottom: 2px solid #fff; padding-bottom: 15px; }
 .swiper-wrapper .swiper-slide .slider-info p{ font-size: 1.2rem;  }
+.sec-why-choose-us .reason-item .reason-item-wrap span{ font-size: 1.2rem; line-height: 1.2; -webkit-text-stroke-width: 0.3px; }
 
 
 
