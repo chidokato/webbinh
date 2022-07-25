@@ -125,7 +125,7 @@
 <section class="sec-tcg">
 	<div class="row g-0">
 		<div class="col-lg-6">
-			{{ $home->link }}
+			{{ $home->links }}
 		</div>
 	</div>
 	<div class="container">
