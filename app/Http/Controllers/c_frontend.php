@@ -48,12 +48,12 @@ class c_frontend extends Controller
     public function home()
     {
         $active = '';
-        $slider = themes::where('note','Slider')->where('status','true')->get();
+        $homes = home::orderBy('view','asc')->get();
         $articles = articles::where('sort_by','1')->where('status','true')->orderBy('id','desc')->paginate(9);
         $articles_news = articles::where('sort_by','2')->where('status','true')->orderBy('id','desc')->paginate(4);
         return view('pages.home',[
+            'homes'=>$homes,
             'active'=>$active,
-            'slider'=>$slider,
             'articles' => $articles,
             'articles_news' => $articles_news,
         ]);

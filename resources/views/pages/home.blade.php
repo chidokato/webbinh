@@ -22,7 +22,36 @@
 @endsection
 @section('content')
 
-@include('layout.slider')
+@foreach($homes as $key => $home)
+
+@if($key==0)
+
+<section class="sec-hero">
+	<div class="hero-slider">
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				@foreach($home->section as $val)
+				<div class="swiper-slide">
+					<span style='background-image: url("data/home/{{$val->img}}")' class="w-100 thumb"></span>
+					<div class="slider-info">
+						<h3>{{$val->name}}</h3>
+						{!! $val->content !!}
+					</div>
+				</div>
+				@endforeach
+			</div>
+			<div class="swiper-navigator">
+				<div class="swiper-pagination"></div>
+				<div class="swiper-navigator-btn">
+					<div class="swiper-button-prev"><i class="icon-prev-thin"></i></div>
+					<div class="swiper-button-next"><i class="icon-next-thin"></i></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+@elseif($key==1)
 
 <section class="sec-product-hot">
 	<div class="container">
@@ -30,58 +59,25 @@
 			<div class="position-relative grid-view">
 				<div class="swiper">
 					<div class="swiper-wrapper">
+						@foreach($home->section as $val)
 						<div class="swiper-slide">
 							<div class="card card-s card-s4">
 								<a href="">
-									<span><img src="frontend/images/space-3.gif" class="card-img-top" style="background-image: url('frontend/images/1.png');" alt="..."></span>
+									<span><img src="frontend/images/space-3.gif" class="card-img-top" style="background-image: url('data/home/{{$val->img}}');" alt="..."></span>
 								</a>
 								<div class="card-body">
 									<div class="card-body-wrap">
-										<h2 class="card-title"><a href="" class="text-truncate">더블에스테크</a></h2>
+										<h2 class="card-title"><a href="" class="text-truncate">{{$val->name}}</a></h2>
 										<div class="card-info">
 											<span><i class="icon-location me-2"></i>
-												다년간의 경험을 바탕으로 고객 설비의 가동률 향상 및 효과적인 Spindle & Motor (이하 “제품”)
+												{!! $val->content !!}
 											</span>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="swiper-slide">
-							<div class="card card-s card-s4">
-								<a href="">
-									<span><img src="frontend/images/space-3.gif" class="card-img-top" style="background-image: url('frontend/images/1.png');" alt="..."></span>
-								</a>
-								<div class="card-body">
-									<div class="card-body-wrap">
-										<h5 class="card-title"><a href="" class="text-truncate">더블에스테크</a></h5>
-										<div class="card-info">
-											<span><i class="icon-location me-2"></i>
-												다년간의 경험을 바탕으로 고객 설비의 가동률 향상 및 효과적인 Spindle & Motor (이하 “제품”)
-											</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="card card-s card-s4">
-								<a href="">
-									<span><img src="frontend/images/space-3.gif" class="card-img-top" style="background-image: url('frontend/images/1.png');" alt="..."></span>
-								</a>
-								<div class="card-body">
-									<div class="card-body-wrap">
-										<h5 class="card-title"><a href="" class="text-truncate">더블에스테크</a></h5>
-										<div class="card-info">
-											<span><i class="icon-location me-2"></i>
-												다년간의 경험을 바탕으로 고객 설비의 가동률 향상 및 효과적인 Spindle & Motor (이하 “제품”)
-											</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
+						@endforeach
 					</div>
 				</div>
 				<div class="swiper-button-next"></div>
@@ -91,6 +87,7 @@
 	</div>
 </section>
 
+@elseif($key==2)
 
 <!------------------- WHY CHOOSE US ------------------->
 <section class="sec-why-choose-us">
@@ -98,13 +95,14 @@
 	<div class="container">
 		<div class="text-center">
 			<div class="primary-title pt-md-0">
-				<h3>(주)더블에스테크</h3>
-				<p>다년간의 경험을 바탕으로 고객 설비의 가동률 향상 및 효과적인 Spindle & Motor (이하 “제품”) 관리 및 가공 품질 향상을 위해 다음과 같은 지원을 약속 합니다.</span></p>
+				<h3>{{ $home->name }}</h3>
+				<p>{{ $home->detail }}</p>
 			</div>
 		</div>
 		<div class="row g-0 justify-content-center">
 			<div class="col-lg-10">
 				<div class="row g-4">
+					@foreach($home->section as $val)
 					<div class="col-6 col-lg-3">
 						<div class="reason-item">
 							<div class="reason-item-wrap">
@@ -114,38 +112,22 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-6 col-lg-3">
-						<div class="reason-item">
-							<div class="reason-item-wrap">
-								<span style="text-align: center;">다년간의 경험을 경<br>
-									바탕으로 고객 설<br>
-									설비의 설비의</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-6 col-lg-3">
-						<div class="reason-item">
-							<div class="reason-item-wrap">
-								<span style="text-align: center;">다년간의 경험을 경<br>
-									바탕으로 고객 설<br>
-									설비의 설비의</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-6 col-lg-3">
-						<div class="reason-item">
-							<div class="reason-item-wrap">
-								<span style="text-align: center;">다년간의 경험을 경<br>
-									바탕으로 고객 설<br>
-									설비의 설비의</span>
-							</div>
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+@endif
+
+@endforeach
+
+
+
+
+
+
 
 <!------------------- ESTIMATE ------------------->
 <section class="sec-tcg">

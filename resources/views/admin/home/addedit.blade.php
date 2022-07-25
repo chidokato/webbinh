@@ -66,22 +66,29 @@
         </div>
         @if(isset($data))
         @foreach($data->section as $key => $val)
-        <input type="hidden" name="section_id[]" value="{{$val->id}}" />
-        <div class="card shadow mb-2" >
-            <div class="card-header py-3 pr-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Add Section</h6>
+        <div class="card shadow mb-2">
+            <div class="card-header py-3 pr-3 d-flex flex-row align-items-center justify-content-between" id="list_section">
+                <h6 class="m-0 font-weight-bold text-primary">Section</h6>
                 <button type="button" onClick="delete_row(this)" class="delete_row"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <input id="id" type="hidden" name="section_id[]" value="{{$val->id}}" />
             </div>
             <div class="card-body add_to_me">
-                <div class="row">
-                    <div class="col-md-7 form-group">
-                        <input class="form-control" type="text" value="{{$val->name}}" name="name_edit_section[]" placeholder="...">
+                <div class="d-flex">
+                    <div style="margin-right: 20px;">
+                        <div class="row">
+                            <div class="col-md-7 form-group">
+                                <input class="form-control" type="text" value="{{$val->name}}" name="name_edit_section[]" placeholder="...">
+                            </div>
+                            <div class="col-md-5 form-group">
+                                <input class="" type="file" name="img_edit_section[]" placeholder="...">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <textarea name="content_edit_section[]" class="form-control" rows="4">{{$val->content}}</textarea>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-5 form-group">
-                        <input class="" type="file" name="img_edit_section[]" placeholder="...">
-                    </div>
-                    <div class="col-md-12 form-group">
-                        <textarea name="content_edit_section[]" class="form-control" rows="4">{{$val->content}}</textarea>
+                    <div class="">
+                        <img style="max-width: 100%; height: 126px" src="data/home/{{$val->img}}">
                     </div>
                 </div>
             </div>
@@ -113,6 +120,18 @@
 
     </div>
     <div class="col-xl-3 col-lg-3">
+        <div class="card shadow mb-2">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Tùy chọn</h6>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>View</label>
+                    <input class="form-control" type="text" value="{{ isset($data) ? $data->view : '' }}{{old('view')}}" name="view" placeholder="...">
+                </div>
+            </div>
+        </div>
+
         <div class="card shadow mb-2">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Ảnh đại diện</h6>

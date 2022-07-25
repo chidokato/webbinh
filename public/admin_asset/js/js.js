@@ -548,3 +548,17 @@ $(document).ready(function(){
 // });
 
 // tìm kiếm
+
+// homes
+$(document).ready(function(){
+    $("button.delete_row").click(function(){
+        var id = $(this).parents('#list_section').find('input[id="id"]').val();
+        // alert(id);
+        $.ajax({
+            url:  'admin/ajax/del_section/'+id, type: 'GET', cache: false, data: {
+                "id":id
+            },
+        });
+    });
+});
+// end homes

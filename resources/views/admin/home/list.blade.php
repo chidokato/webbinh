@@ -53,7 +53,7 @@
                                 <th></th>
                                 <th>Tên sản phẩm</th>
                                 <th>Trạng thái</th>
-                                <th>Danh mục</th>
+                                <th>View</th>
                                 <th>Giá</th>
                                 <th>Người đăng</th>
                                 <th>Ngày đăng</th>
@@ -82,7 +82,7 @@
                                         </label>
                                     </div>
                                 </td>
-                                <td>{{ isset($val->category->name) ? $val->category->name : '' }}</td>
+                                <td>{{ $val->view }}</td>
                                 <td>{{ isset($val->home->search_price) ? number_format($val->home->search_price).' đ' : '' }}</td>
                                 <td>{{ isset($val->user->name) ? $val->user->name : '' }}</td>
                                 <td>
@@ -121,7 +121,7 @@
                                 <th></th>
                                 <th>Tên sản phẩm</th>
                                 <th>Trạng thái</th>
-                                <th>Danh mục</th>
+                                <th>View</th>
                                 <th>Giá</th>
                                 <th>Người đăng</th>
                                 <th>Ngày đăng</th>
@@ -151,7 +151,7 @@
                                         </label>
                                     </div>
                                 </td>
-                                <td>{{ isset($val->category->name) ? $val->category->name : '' }}</td>
+                                <td>{{ isset($val->view) ? $val->view : '' }}</td>
                                 <td>{{ isset($val->home->search_price) ? number_format($val->home->search_price).' đ' : '' }}</td>
                                 <td>{{ isset($val->user->name) ? $val->user->name : '' }}</td>
                                 <td>
@@ -191,7 +191,7 @@
                                 <th></th>
                                 <th>Tên sản phẩm</th>
                                 <th>Trạng thái</th>
-                                <th>Danh mục</th>
+                                <th>view</th>
                                 <th>Giá</th>
                                 <th>Người đăng</th>
                                 <th>Ngày đăng</th>
@@ -221,7 +221,7 @@
                                         </label>
                                     </div>
                                 </td>
-                                <td>{{ isset($val->category->name) ? $val->category->name : '' }}</td>
+                                <td>{{ isset($val->view) ? $val->view : '' }}</td>
                                 <td>{{ isset($val->home->search_price) ? number_format($val->home->search_price).' đ' : '' }}</td>
                                 <td>{{ isset($val->user->name) ? $val->user->name : '' }}</td>
                                 <td>

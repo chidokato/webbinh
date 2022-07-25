@@ -265,5 +265,6 @@ class c_ajax extends Controller
         }
     }
     // option
+
 }
 ?>

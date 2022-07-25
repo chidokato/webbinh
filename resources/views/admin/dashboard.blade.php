@@ -73,7 +73,7 @@
                         <a href="admin/dashboard/{{$val->id}}"><img src="data/news/300/{{$val->img}}" alt=""></a>
                         <div class="info">
                             <h2><a class="line-2" href="admin/dashboard/{{$val->id}}">{{$val->name}}</a></h2>
-                            <p>{{$val->user->your_name}} | {{date('d/m/Y',strtotime($val->updated_at))}}</p>
+                            <p>{{ isset($val->user->your_name)?$val->user->your_name:'' }} | {{date('d/m/Y',strtotime($val->updated_at))}}</p>
                         </div>
                     </li>
                     @endforeach

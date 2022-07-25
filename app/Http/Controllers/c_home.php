@@ -16,7 +16,7 @@ class c_home extends Controller
 {
     public function getlist()
     {
-        $home = home::orderBy('id','desc')->get();
+        $home = home::orderBy('view','asc')->get();
         return view('admin.home.list',[
             'home'=>$home,
         ]);
@@ -76,6 +76,7 @@ class c_home extends Controller
         $home = new home;
         $home->name = $Request->name;
         $home->links = $Request->links;
+        $home->view = $Request->view;
         $home->detail = $Request->detail;
         $home->content = $Request->content;
         $home->status = 'true';
@@ -95,8 +96,16 @@ class c_home extends Controller
         if ($Request->name_section) {
             foreach($Request->name_section as $val){
                 $section = new section;
-                $section->articles_id = $home->id;
+                $section->home_id = $home->id;
                 $section->name = $val;
+                if ($Request->hasFile('img_section')) {
+                    $file = $Request->file('img_section')[$key];
+                    $filename = $file->getClientOriginalName();
+                    while(file_exists("data/home/300/".$filename)){ $filename = str_random(4)."_".$filename; }
+                    $img = Image::make($file)->resize(1000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
+                    $img = Image::make($file)->resize(300, 300, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/300/'.$filename));
+                    $section->img = $filename;
+                }
                 $section->save();
             }
         }
@@ -119,6 +128,7 @@ class c_home extends Controller
         $home = home::find($id);
         $home->name = $Request->name;
         $home->links = $Request->links;
+        $home->view = $Request->view;
         $home->detail = $Request->detail;
         $home->content = $Request->content;
 
@@ -146,7 +156,14 @@ class c_home extends Controller
                 $section = new section;
                 $section->home_id = $home->id;
                 $section->name = $val;
-                $section->content = $Request->content_section[$key];
+                if ($Request->hasFile('img_section')) {
+                    $file = $Request->file('img_section')[$key];
+                    $filename = $file->getClientOriginalName();
+                    while(file_exists("data/home/300/".$filename)){ $filename = str_random(4)."_".$filename; }
+                    $img = Image::make($file)->resize(1000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
+                    $img = Image::make($file)->resize(300, 300, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/300/'.$filename));
+                    $section->img = $filename;
+                }
                 $section->save();
             }
         }
@@ -156,6 +173,21 @@ class c_home extends Controller
                 $section = section::find($sec_id);
                 $section->name = $Request->name_edit_section[$key];
                 $section->content = $Request->content_edit_section[$key];
+                if (isset($Request->img_edit_section[$key])) {
+                    if ($Request->hasFile('img_edit_section')) {
+                        if(File::exists('data/home/'.$home->img)) { 
+                            File::delete('data/home/'.$home->img); 
+                            File::delete('data/home/300/'.$home->img); 
+                        }
+                        $file = $Request->file('img_edit_section')[$key];
+                        $filename = $file->getClientOriginalName();
+                        while(file_exists("data/home/300/".$filename)){ $filename = str_random(4)."_".$filename; }
+                        $img = Image::make($file)->resize(1000, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/'.$filename));
+                        $img = Image::make($file)->resize(300, 300, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/300/'.$filename));
+                        $section->img = $filename;
+                    }
+                }
+                
                 $section->save();
             }
         }

@@ -262,7 +262,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminlogin'],function(){
 		Route::get('update_status_option/{id}','c_ajax@update_status_option');
 		Route::get('dell_section/{id}','c_ajax@dell_section');
 
-
+		
 		// Route::POST('dashboard','c_ajax@dashboard');
 	});
 
