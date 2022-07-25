@@ -17,12 +17,7 @@
 @section('content')
 
 <style type="text/css">
-	.cover{ padding-top: 60px; }
-	.cover hr{ height: 3px; color: #fff; z-index: 9999; background: #fff; width: 120px; margin: 40px auto; }
-	.cover h1{ margin-bottom: 40px; text-align: center; color: #fff; text-transform: uppercase; font-weight: bold; }
-	.cover p{ text-align: center; color: #fff; }
-	.cover .breadcrumb{ justify-content: flex-end;}
-	.cover .breadcrumb li, .cover .breadcrumb li a{ color: #fff; }
+	
 </style>
 <div class="cover" style="background-image: url(frontend/images/sub-header.jpg);" >
 	<div class="container">
@@ -152,7 +147,7 @@
 
 @endsection
 
-@section('css')
+@section('script')
 <script src="frontend/js/bootstrap.bundle.min.js"></script>
 <script src="frontend/js/custom.js"></script>
 @endsection
