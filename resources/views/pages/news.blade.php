@@ -59,7 +59,7 @@
 				
 				<div class="news-hightlight">
 					<div class="row">
-						<h2 class="text-uppercase title-subpage">{{$category->name}}</h2>
+						<!-- <h2 class="text-uppercase title-subpage">{{$category->name}}</h2> -->
 
 						<div class="content">
 							{!! $category->content !!}
