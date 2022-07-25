@@ -433,7 +433,7 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
 }
 .card-s .card-title{ font-size: 2rem; }
 .swiper-wrapper .swiper-slide { position: relative; }
-.swiper-wrapper .swiper-slide .slider-info{ position: absolute; top: 20vh; left: 20vh; color: #fff; z-index: 9999999; }
+.swiper-wrapper .swiper-slide .slider-info{ position: absolute; top: 20vh; left: 20vh; color: #fff; z-index: 9999999; width: 400px; }
 .swiper-wrapper .swiper-slide .slider-info h3{ font-size: 2rem; margin-bottom: 25px; border-bottom: 2px solid #fff; padding-bottom: 15px; }
 .swiper-wrapper .swiper-slide .slider-info p{ font-size: 1.2rem;  }
 

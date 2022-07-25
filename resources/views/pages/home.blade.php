@@ -69,7 +69,7 @@
 									<div class="card-body-wrap">
 										<h2 class="card-title"><a href="" class="text-truncate">{{$val->name}}</a></h2>
 										<div class="card-info">
-											<span><i class="icon-location me-2"></i>
+											<span><i class="me-2"></i>
 												{!! $val->content !!}
 											</span>
 										</div>
