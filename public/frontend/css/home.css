@@ -402,7 +402,7 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
 .cover-title-home {
     padding-top: 0;
 }
-.elementor-background-overlay{ background-color: #686868;
+.elementor-background-overlay{ background-color: #212529;
     opacity: 0.7;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
     height: 100%;
