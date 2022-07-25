@@ -106,9 +106,9 @@
 					<div class="col-6 col-lg-3">
 						<div class="reason-item">
 							<div class="reason-item-wrap">
-								<span style="text-align: center;">다년간의 경험을 경<br>
-									바탕으로 고객 설<br>
-									설비의 설비의</span>
+								<span style="text-align: center; padding: 0px 30px;">
+									{!! $val->content !!}
+								</span>
 							</div>
 						</div>
 					</div>
