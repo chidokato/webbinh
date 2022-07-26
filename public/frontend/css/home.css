@@ -447,7 +447,9 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
 .content b, .content strong{font-weight: 100;-webkit-text-stroke-width: 0.8px !important;letter-spacing: 0.3px;}
 .news-sec .content h2{ font-size: 1.2rem }
 .news-sec .content h3{ font-size: 1rem }
-
+.content table{ width: 100% !important }
+tbody, td, tfoot, th, thead, tr{ border: 1px solid #ddd; padding: 5px }
+.content td p{ margin-bottom: 0px }
 
 
 @media (max-width: 480px) {
