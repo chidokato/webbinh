@@ -23,7 +23,7 @@
 	<div class="container">
 		<hr>
 		<h1>{{$category->name}}</h1>
-		<p>고객과 믿음을 바탕으로 소통으로 고객 만족 실현</p>
+		<p>{!! $category->detail !!}</p>
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
