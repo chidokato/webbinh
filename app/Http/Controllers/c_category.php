@@ -69,6 +69,7 @@ class c_category extends Controller
         $category->name = $Request->name;
         $category->sku = str_random(8);
         $category->slug = changeTitle($Request->name);
+        $category->detail = $Request->detail;
         $category->content = $Request->content;
         $category->sort_by = $Request->sort_by;
         $category->parent = $Request->parent;
@@ -106,6 +107,7 @@ class c_category extends Controller
         $category = category::find($id);
         $category->name = $Request->name;
         $category->slug = changeTitle($Request->name);
+        $category->detail = $Request->detail;
         $category->content = $Request->content;
         $category->icon = $Request->icon;
         $category->view = $Request->view;

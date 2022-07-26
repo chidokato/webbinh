@@ -84,6 +84,12 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label>Mổ tả ngắn</label>
+                            <textarea name="detail" rows="3" class="form-control" id="">{{ isset($data) ? $data->detail : '' }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
                             <label>Content</label>
                             <textarea name="content" class="form-control" id="ckeditor">{{ isset($data) ? $data->content : '' }}</textarea>
                         </div>
