@@ -11,7 +11,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item mobile-hide">
-            <a class="add-iteam" target="_blank" href="admin/dashboard"><button class="btn-warning form-control" type="button"><i class="fa fa-share" aria-hidden="true"></i> Trang chủ</button></a>
+            <a class="add-iteam" target="_blank" href="{{asset('')}}"><button class="btn-warning form-control" type="button"><i class="fa fa-share" aria-hidden="true"></i> Trang chủ</button></a>
         </li>
         <div class="topbar-divider d-none d-sm-block"></div>
         <li class="nav-item mobile-hide">

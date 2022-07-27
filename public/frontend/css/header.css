@@ -326,3 +326,8 @@ header nav .navbar-nav.mb-lg-0 .dropdown-menu {
 header nav .navbar-nav.mb-lg-0 .dropdown-menu a {
     color: #000;
     } 
+
+.navbar-collapse ul li select:focus-visible{
+  outline: none;
+}
+#translate_select{ margin-left: 10px; }

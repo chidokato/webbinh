@@ -39,6 +39,7 @@
 				</li>
 				@endif
 				@endforeach
+				<li> <div id="translate_select"></div> </li>
 			</ul>
 			
 
