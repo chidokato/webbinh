@@ -38,7 +38,6 @@
 		<div class="row">
 			<!-- <div class="col-lg-3 d-none d-lg-block"> -->
 			<div class="col-lg-3 d-lg-block">
-
 				<div class="widget widget-list mb-3 sticky-70">
 					<h4><span>{{$category->name}}</span></h4>
 					<ul>
@@ -50,11 +49,9 @@
 			</div>
 
 			<div class="col-lg-9">
-				
 				<div class="news-hightlight">
 					<div class="row">
 						<div class="content">
-							<h2>{{$category->name}}</h2>
 							{!! $category->content !!}
 						</div>
 						<div class="row row-cols-2 row-cols-lg-3 g-3 g-lg-3 grid-view" style="margin-top: 0px">
