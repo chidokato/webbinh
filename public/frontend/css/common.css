@@ -535,3 +535,15 @@ header, a, a h5, .notify-num, .navbar .navbar-brand, .nav-link, .sec-nav .navbar
 }
 .content .row img{width: 100%}
 .content .row{margin-bottom: 20px}
+.lienhe{ margin-top: 20px; }
+.lienhe input, .lienhe textarea{ border: 1px solid #ddd; height: auto !important; border-radius: 5px; }
+.lienhe label{ margin-bottom: 5px; }
+.lienhe .form-group{ margin-bottom: 20px; }
+.lienhe button{ float: left; border: none; padding: 8px 20px; border-radius: 5px; background: var(--sub-color); color: #fff; }
+.lienhe button:hover{ background: var(--main-color); }
+.rows-contact{ display: flex; margin-bottom: 30px;align-items: center; }
+.rows-contact .images{ width: 80px; height: 80px; border: 1px solid #333; text-align: center; line-height: 80px; border-radius: 200px; margin-right: 20px; }
+.rows-contact img{ width: 40px; height: 40px; }
+.rows-contact h4{ font-size: 1rem; -webkit-text-stroke-width: 0.8px !important;letter-spacing: 0.3px; margin-bottom: 6px; }
+.rows-contact p{ margin-bottom: 0px; }
+.title-contact{ font-size: 1rem; -webkit-text-stroke-width: 0.8px !important;letter-spacing: 0.3px; margin-bottom: 30px; }

@@ -130,7 +130,7 @@ class c_frontend extends Controller
         if ($category['sort_by'] == 3) {
             // return view('pages.singlepage',['category'=>$category, 'active'=>$active]);
             $articles = articles::where('status','true')->whereIn('category_id',$cat_array)->orderBy('id','desc')->paginate(15);
-            return view('pages.news',[
+            return view('pages.singlepage',[
                 'category'=>$category,
                 'articles'=>$articles,
                 'active'=>$active,
