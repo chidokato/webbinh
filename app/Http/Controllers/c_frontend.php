@@ -91,17 +91,23 @@ class c_frontend extends Controller
         }
 
         if ($category['sort_by'] == 1) {
-            $id_pro_array = [];
-            foreach($cat_array as $key => $cat_id){
-                $articles = articles::where('category_id', $cat_id)->orwhere('category_sku','like',"%$cat_sku_array[$key]%")->get();
-                foreach($articles as $article){
-                    $id_pro_array[] = $article->id;
-                }
-            }
-            $new_id_pro_array = array_unique($id_pro_array);
-            // dd($new_id_pro_array);
-            $articles = articles::where('status','true')->whereIn('id',$new_id_pro_array)->orderBy('id','desc')->paginate(24);
-            return view('pages.product',['category'=>$category, 'product'=>$articles, 'active'=>$active]);
+            // $id_pro_array = [];
+            // foreach($cat_array as $key => $cat_id){
+            //     $articles = articles::where('category_id', $cat_id)->orwhere('category_sku','like',"%$cat_sku_array[$key]%")->get();
+            //     foreach($articles as $article){
+            //         $id_pro_array[] = $article->id;
+            //     }
+            // }
+            // $new_id_pro_array = array_unique($id_pro_array);
+            // $articles = articles::where('status','true')->whereIn('id',$new_id_pro_array)->orderBy('id','desc')->paginate(24);
+            // return view('pages.product',['category'=>$category, 'product'=>$articles, 'active'=>$active]);
+            $articles = articles::where('status','true')->whereIn('category_id',$cat_array)->orderBy('id','desc')->paginate(15);
+            return view('pages.news',[
+                'category'=>$category,
+                'articles'=>$articles,
+                'active'=>$active,
+                'sub_cat'=>$sub_cat,
+            ]);
         }
         if($category->parent == 0){
             $sub_cat = category::where('parent',$category->id)->orderBy('id','asc')->get();
@@ -120,7 +126,14 @@ class c_frontend extends Controller
         }
 
         if ($category['sort_by'] == 3) {
-            return view('pages.singlepage',['category'=>$category, 'active'=>$active]);
+            // return view('pages.singlepage',['category'=>$category, 'active'=>$active]);
+            $articles = articles::where('status','true')->whereIn('category_id',$cat_array)->orderBy('id','desc')->paginate(15);
+            return view('pages.news',[
+                'category'=>$category,
+                'articles'=>$articles,
+                'active'=>$active,
+                'sub_cat'=>$sub_cat,
+            ]);
         }
         
     }
