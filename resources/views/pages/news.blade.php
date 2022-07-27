@@ -125,7 +125,7 @@
                 },
                 // when window width is >= 640px
                 1024: {
-                    slidesPerView: 5,
+                    slidesPerView: 4,
                     spaceBetween: 20,
                     navigation: {
                         nextEl: ".broker-slider .swiper-button-next",
