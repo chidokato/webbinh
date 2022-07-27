@@ -108,7 +108,7 @@ class c_frontend extends Controller
             // $articles = articles::where('status','true')->whereIn('id',$new_id_pro_array)->orderBy('id','desc')->paginate(24);
             // return view('pages.product',['category'=>$category, 'product'=>$articles, 'active'=>$active]);
             $articles = articles::where('status','true')->whereIn('category_id',$cat_array)->orderBy('id','desc')->paginate(15);
-            return view('pages.news',[
+            return view('pages.product',[
                 'category'=>$category,
                 'articles'=>$articles,
                 'active'=>$active,

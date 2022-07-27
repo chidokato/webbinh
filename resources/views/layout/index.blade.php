@@ -40,6 +40,13 @@
 <link href="frontend/css/home.css" rel="stylesheet">
 <!-- ================= js ================== --> 
 
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'vi'}, 'translate_select');
+    }
+</script>
+
 {!! $head_setting->codeheader !!}
 
 </head>
@@ -55,12 +62,7 @@
 
 {!! $head_setting->codebody !!}
 
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'vi'}, 'translate_select');
-    }
-</script>
+
 
 </body>
 </html>
