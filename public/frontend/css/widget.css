@@ -4,7 +4,7 @@
 .widget-list h4 span, .scrollspy > a span {position: relative;display: inline-block;padding-bottom: 10px;}
 .widget-list h4 span:before, .scrollspy > a span:before {position: absolute;content: '';height: 2px;left: 0;width: 100%;background-color: var(--sub-color);bottom: 0px;}
 .widget-list ul li {display:block}
-.widget-list ul li a {padding: 3px 0;display:block;color: #222;}
+.widget-list ul li a {padding: 7px 0;display:block;color: #222;}
 .widget-list ul li a:hover {color:var(--sub-color)}
 .widget-list ul li a i, .widget-list nav .nav-link i {color:var(--main-color);font-size: 16px;vertical-align: -2px;}
 
@@ -105,6 +105,7 @@
 
 
 .widget-broker.card-s3::before {display:none}
+.widget-list ul li .active{ color: var(--sub-color); }
 
 @media (min-width: 769px) {
     .widget-subscribe::before, .news-item-captain-img::before, .outline-effect::before {content:'';top: 0px; bottom: 0px; right:0px; left:0px; border:1px solid var(--sub-color); position:absolute; border-radius: 3px; opacity:0; transition:.2s all}
@@ -116,3 +117,7 @@
     .widget-appointment .cta-text {font-size:12px}
 }
 
+.sticky-70{
+    position: sticky;
+    top: 70px;
+}

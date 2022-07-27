@@ -27,7 +27,7 @@
 		<p>{!! $category->detail !!}</p>
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+				<li class="breadcrumb-item"><a href="{{asset('')}}">Trang chủ</a></li>
 				<li class="breadcrumb-item active" aria-current="page">{{$category->name}}</li>
 			</ol>
 		</nav>
@@ -41,11 +41,11 @@
 		<div class="row">
 			<div class="col-lg-3 d-none d-lg-block">
 
-				<div class="widget widget-list mb-3">
-					<h4><span>Nội dung</span></h4>
+				<div class="widget widget-list mb-3 sticky-70">
+					<h4><span>{{$category->name}}</span></h4>
 					<ul>
-						@foreach($cat_new as $val)
-						<li><a href="{{$val->slug}}"><i class="icon-next me-2"></i>{{$val->name}}</a></li>
+						@foreach($sub_cat as $val)
+						<li><a class="<?php if($active == $val->slug){ echo "active";} ?>" href="{{$val->slug}}"><i class="icon-next me-2"></i>{{$val->name}}</a></li>
 						@endforeach
 					</ul>
 				</div>
@@ -125,7 +125,7 @@
                 },
                 // when window width is >= 640px
                 1024: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                     spaceBetween: 20,
                     navigation: {
                         nextEl: ".broker-slider .swiper-button-next",

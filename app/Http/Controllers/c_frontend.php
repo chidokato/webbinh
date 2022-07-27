@@ -75,11 +75,10 @@ class c_frontend extends Controller
     {
         $active = $curl;
         $category = category::where('slug',$curl)->first();
-        // if ($curl=='gioi-thieu') { $active = 'gioi-thieu'; return view('pages.about',['category'=>$category, 'active'=>$active]); }
-        // if ($curl=='lien-he') { $active = 'lien-he'; return view('pages.contact',['category'=>$category, 'active'=>$active]); }
         
         $cates = category::where('parent', $category["id"])->get();
         $cat_array = [$category["id"]];
+
         $cat_sku_array = [$category["sku"]];
         foreach ($cates as $cate) {
             $cat_array[] = $cate->id;
@@ -104,10 +103,20 @@ class c_frontend extends Controller
             $articles = articles::where('status','true')->whereIn('id',$new_id_pro_array)->orderBy('id','desc')->paginate(24);
             return view('pages.product',['category'=>$category, 'product'=>$articles, 'active'=>$active]);
         }
+        if($category->parent == 0){
+            $sub_cat = category::where('parent',$category->id)->get();
+        }else{
+            $sub_cat = category::where('parent',$category->parent)->get();
+        }
 
         if ($category['sort_by'] == 2) {
             $articles = articles::where('status','true')->whereIn('category_id',$cat_array)->orderBy('id','desc')->paginate(15);
-            return view('pages.news',['category'=>$category, 'articles'=>$articles, 'active'=>$active]);
+            return view('pages.news',[
+                'category'=>$category,
+                'articles'=>$articles,
+                'active'=>$active,
+                'sub_cat'=>$sub_cat,
+            ]);
         }
 
         if ($category['sort_by'] == 3) {
