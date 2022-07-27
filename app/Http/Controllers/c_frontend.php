@@ -104,9 +104,9 @@ class c_frontend extends Controller
             return view('pages.product',['category'=>$category, 'product'=>$articles, 'active'=>$active]);
         }
         if($category->parent == 0){
-            $sub_cat = category::where('parent',$category->id)->get();
+            $sub_cat = category::where('parent',$category->id)->orderBy('id','asc')->get();
         }else{
-            $sub_cat = category::where('parent',$category->parent)->get();
+            $sub_cat = category::where('parent',$category->parent)->orderBy('id','asc')->get();
         }
 
         if ($category['sort_by'] == 2) {

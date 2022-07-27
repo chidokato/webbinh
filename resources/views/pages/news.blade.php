@@ -39,7 +39,8 @@
 	<div class="container">
 		
 		<div class="row">
-			<div class="col-lg-3 d-none d-lg-block">
+			<!-- <div class="col-lg-3 d-none d-lg-block"> -->
+			<div class="col-lg-3 d-lg-block">
 
 				<div class="widget widget-list mb-3 sticky-70">
 					<h4><span>{{$category->name}}</span></h4>
