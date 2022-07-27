@@ -90,6 +90,12 @@ class c_frontend extends Controller
             }
         }
 
+        if($category->parent == 0){
+            $sub_cat = category::where('parent',$category->id)->orderBy('id','asc')->get();
+        }else{
+            $sub_cat = category::where('parent',$category->parent)->orderBy('id','asc')->get();
+        }
+
         if ($category['sort_by'] == 1) {
             // $id_pro_array = [];
             // foreach($cat_array as $key => $cat_id){
@@ -109,11 +115,7 @@ class c_frontend extends Controller
                 'sub_cat'=>$sub_cat,
             ]);
         }
-        if($category->parent == 0){
-            $sub_cat = category::where('parent',$category->id)->orderBy('id','asc')->get();
-        }else{
-            $sub_cat = category::where('parent',$category->parent)->orderBy('id','asc')->get();
-        }
+        
 
         if ($category['sort_by'] == 2) {
             $articles = articles::where('status','true')->whereIn('category_id',$cat_array)->orderBy('id','desc')->paginate(15);
