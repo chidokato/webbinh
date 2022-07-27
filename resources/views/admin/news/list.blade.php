@@ -22,36 +22,16 @@
                     <div class="form-group mr-3">
                         <input value="{{ isset($key) ? $key : '' }}" name="key" type="text" class="form-control mr-3" placeholder="Tên sp...">
                     </div>
-                    <div class="form-group mr-3" style="min-width: 180px;">
+                    <div class="form-group mr-3">
                         <select class="form-control mr-3 select2" name="category_id">
-                            <option value=""> Tất cả files</option>
+                            <option value=""> Tất cả danh mục</option>
                             @foreach($category as $val)
                             <option <?php if(isset($category_id) && $category_id==$val->id){echo "selected";} ?> value="{{$val->id}}">{{$val->name}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group mr-3" style="min-width: 180px;">
-                        <select class="form-control mr-3 select2" name="duan">
-                            <option value=""> Tất cả dự án</option>
-                            @foreach($option as $val)
-                            @if($val->sort_by == 'duan')
-                            <option <?php if(isset($duan) && $duan==$val->sku){ echo 'selected'; } ?> value="{{$val->sku}}">{{$val->name}}</option>
-                            @endif
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group mr-3" style="min-width: 180px;">
-                        <select class="form-control mr-3 select2" name="theloai">
-                            <option value=""> Tất cả thể loại</option>
-                            @foreach($option as $val)
-                            @if($val->sort_by == 'theloai')
-                            <option <?php if(isset($theloai) && $theloai==$val->sku){ echo 'selected'; } ?> value="{{$val->sku}}">{{$val->name}}</option>
-                            @endif
-                            @endforeach
-                        </select>
-                    </div>
                     <div class="form-group mr-3">
-                        <input type="text" class="form-control mr-3" name="datefilter" value="{{ isset($datefilter) ? $datefilter : '' }}" placeholder='Ngày update' />
+                        <input type="text" class="form-control mr-3" name="datefilter" value="{{ isset($datefilter) ? $datefilter : '' }}" placeholder='Ngày đăng ...' />
                     </div>
                     <div class="form-group mr-3">
                         <select class="form-control mr-3" name="paginate">
@@ -115,7 +95,7 @@
                                     <i style="font-size: 14px">{{date('d/m/Y',strtotime($val->created_at))}}</i>
                                 </td>
                                 <td class="d-flex">
-                                    <!-- <a href="admin/news/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a> -->
+                                    <a href="admin/news/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a>
                                     <a href="admin/news/edit/{{$val->id}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
                                     <a onclick="dell()" href="admin/news/delete/{{$val->id}}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
@@ -173,7 +153,7 @@
                                     <i style="font-size: 14px">{{date('d/m/Y',strtotime($val->created_at))}}</i>
                                 </td>
                                 <td class="d-flex">
-                                    <!-- <a href="admin/news/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a> -->
+                                    <a href="admin/news/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a>
                                     <a href="admin/news/edit/{{$val->id}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
                                     <a onclick="dell()" href="admin/news/delete/{{$val->id}}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
@@ -232,7 +212,7 @@
                                     <i style="font-size: 14px">{{date('d/m/Y',strtotime($val->created_at))}}</i>
                                 </td>
                                 <td class="d-flex">
-                                    <!-- <a href="admin/news/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a> -->
+                                    <a href="admin/news/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a>
                                     <a href="admin/news/edit/{{$val->id}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
                                     <a onclick="dell()" href="admin/news/delete/{{$val->id}}"><i class="fas fa-trash-alt"></i></a>
                                 </td>

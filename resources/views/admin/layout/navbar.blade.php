@@ -27,9 +27,9 @@
     <li class="nav-item">
         <a class="nav-link" href="admin/product/list"><i class="fas fa-fw fa-chart-area"></i><span>Sản phẩm</span></a>
     </li>
-    <!-- <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link" href="admin/news/list"><i class="fas fa-fw fa-chart-area"></i><span>Tin tức</span></a>
-    </li> -->
+    </li>
     <!-- <li class="nav-item">
         <a class="nav-link" href="admin/messages/list"><i class="fas fa-fw fa-chart-area"></i><span>Messages</span></a>
     </li> -->

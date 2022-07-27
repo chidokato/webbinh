@@ -44,7 +44,7 @@ class c_category extends Controller
 
     public function getadd()
     {
-        $category = category::where('sort_by',2)->select('id','name','parent')->get();
+        $category = category::where('sort_by',1)->select('id','name','parent')->get();
         return view('admin.category.addedit',['category'=>$category]);
     }
 

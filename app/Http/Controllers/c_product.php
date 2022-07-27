@@ -64,7 +64,7 @@ class c_product extends Controller
 
     public function getadd()
     {
-        $category = category::where('sort_by',2)->orderBy('id','desc')->get();
+        $category = category::where('sort_by',1)->orderBy('id','desc')->get();
         $investor = investor::orderBy('id','desc')->get();
         $mausac = mausac::orderBy('id','desc')->get();
         $form = form::orderBy('id','desc')->get();
@@ -197,7 +197,7 @@ class c_product extends Controller
     {
         $data = articles::findOrFail($id);
         $seo = seo::findOrFail($data['seo_id']);
-        $category = category::where('sort_by',2)->orderBy('id','desc')->get();
+        $category = category::where('sort_by',1)->orderBy('id','desc')->get();
         $mausac = mausac::orderBy('id','desc')->get();
         $form = form::orderBy('id','desc')->get();
         $size = size::orderBy('id','desc')->get();

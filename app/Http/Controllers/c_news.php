@@ -9,38 +9,28 @@ use App\seo;
 use App\articles;
 use App\category;
 use App\images;
-use App\option;
-use App\section;
 
 class c_news extends Controller
 {
     public function getlist()
     {
-        $articles = articles::where('user_id',Auth::User()->id)->where('sort_by',2)->orderBy('id','desc')->get();
-        $category = category::orderBy('id','desc')->get();
-        $option = option::orderBy('id','desc')->get();
+        $articles = articles::where('sort_by',2)->orderBy('id','desc')->get();
+        $category = category::where('sort_by',2)->orderBy('id','desc')->get();
         return view('admin.news.list',[
             'news'=>$articles,
             'category'=>$category,
-            'option'=>$option,
         ]);
     }
 
     public function search(Request $Request)
     {
         $datefilter[] = '';
-        $articles = articles::where('user_id',Auth::User()->id)->where('sort_by',2)->orderBy('id','desc')->where('id','!=' , 0);
+        $articles = articles::where('sort_by',2)->orderBy('id','desc')->where('id','!=' , 0);
         if($Request->key){
             $articles->where('name','like',"%$Request->key%");
         }
         if($Request->category_id){
             $articles->where('category_id',$Request->category_id);
-        }
-        if($Request->duan){
-            $articles->where('option_id','like',"%$Request->duan%");
-        }
-        if($Request->theloai){
-            $articles->where('option_id','like',"%$Request->theloai%");
         }
         if(isset($Request->datefilter)){
             $datefilter = explode(" - ", $Request->datefilter);
@@ -50,40 +40,34 @@ class c_news extends Controller
             $articles->whereDate('created_at','>=', $day1)->whereDate('created_at','<=', $day2);
         }
         $articles = $articles->paginate($Request->paginate);
-        $category = category::orderBy('id','desc')->get();
-        $option = option::orderBy('id','desc')->get();
+        $category = category::where('sort_by',2)->orderBy('id','desc')->get();
         return view('admin.news.list',[
             'news'=>$articles,
             'category'=>$category,
-            'option'=>$option,
 
             'key'=>$Request->key,
             'category_id'=>$Request->category_id,
             'datefilter'=>$Request->datefilter,
             'paginate'=>$Request->paginate,
-            'duan'=>$Request->duan,
-            'theloai'=>$Request->theloai,
 
         ]);
     }
 
     public function getadd()
     {
-        $category = category::orderBy('id','desc')->get();
-        $option = option::orderBy('id','desc')->get();
+        $category = category::where('sort_by',2)->orderBy('id','desc')->get();
         return view('admin.news.addedit',[
-            'category'=>$category,
-            'option'=>$option,
+            'category'=>$category
         ]);
     }
 
     public function postadd(Request $Request)
     {
-        // $this->validate($Request,[
-        //     'name' => 'unique:articles,name',
-        // ],[
-        //     'name.unique'=>'Tên bài viết đã tồn tại',
-        // ] );
+        $this->validate($Request,[
+            'name' => 'unique:articles,name',
+        ],[
+            'name.unique'=>'Tên bài viết đã tồn tại',
+        ] );
         // seo
         $seo = new seo;
         if ($Request->title == "") {
@@ -100,7 +84,6 @@ class c_news extends Controller
         $articles->user_id = Auth::User()->id;
         $articles->category_id = $Request->cat_id;
         $articles->seo_id = $seo->id;
-        if(isset($Request->option)){ $articles->option_id = implode(',', $Request->option); } else { $articles->option_id = ''; }
         $articles->sort_by = '2';
         $articles->sku = str_random(8);
         $articles->name = $Request->name;
@@ -120,18 +103,7 @@ class c_news extends Controller
             $articles->img = $filename;
         }
         // thêm ảnh
-
         $articles->save();
-
-        if ($Request->name_section) {
-            foreach($Request->name_section as $val){
-                $section = new section;
-                $section->articles_id = $articles->id;
-                $section->name = $val;
-                $section->save();
-            }
-        }
-
         return redirect('admin/news/list')->with('Alerts','Thành công');
     }
 
@@ -140,7 +112,7 @@ class c_news extends Controller
         $double = 'double';
         $data = articles::findOrFail($id);
         $seo = seo::findOrFail($data['seo_id']);
-        $category = category::orderBy('id','desc')->get();
+        $category = category::where('sort_by',2)->orderBy('id','desc')->get();
         return view('admin.news.addedit',[
             'data'=>$data,
             'category'=>$category,
@@ -153,13 +125,11 @@ class c_news extends Controller
     {
         $data = articles::findOrFail($id);
         $seo = seo::findOrFail($data['seo_id']);
-        $category = category::orderBy('id','desc')->get();
-        $option = option::orderBy('id','desc')->get();
+        $category = category::where('sort_by',2)->orderBy('id','desc')->get();
         return view('admin.news.addedit',[
             'data'=>$data,
             'category'=>$category,
             'seo'=>$seo,
-            'option'=>$option,
         ]);
     }
 
@@ -172,7 +142,6 @@ class c_news extends Controller
         $articles->content = $Request->content;
         $articles->category_id = $Request->cat_id;
         $articles->style = $Request->style;
-        if(isset($Request->option)){ $articles->option_id = implode(',', $Request->option); } else { $articles->option_id = ''; }
         if ($Request->hasFile('img')) {
             // xóa ảnh cũ
             if(File::exists('data/news/'.$articles->img)) { 
@@ -203,24 +172,6 @@ class c_news extends Controller
         $seo->keywords = $Request->keywords;
         $seo->robot = $Request->robot;
         $seo->save();
-
-        if ($Request->name_section) {
-            foreach($Request->name_section as $val){
-                $section = new section;
-                $section->articles_id = $articles->id;
-                $section->name = $val;
-                $section->save();
-            }
-        }
-
-        if ($Request->section_id) {
-            foreach($Request->section_id as $key => $sec_id){
-                $section = section::find($sec_id);
-                $section->name = $Request->name_section_edit[$key];
-                $section->save();
-            }
-        }
-
         return redirect('admin/news/edit/'.$id)->with('Alerts','Thành công');
     }
 

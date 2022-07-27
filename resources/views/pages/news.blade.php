@@ -71,7 +71,7 @@
 										@foreach($val->images as $img)
 										<div class="swiper-slide">
 											<div class="card ">
-												<a href="#"><img src="frontend/images/space-2.gif" class="card-img-top thumb" style="background-image: url('data/product/300/{{$img->img}}');" alt="{{$val->name}}"></a>
+												<a href="#"><img src="frontend/images/space-2.gif" class="card-img-top thumb" style="background-image: url('data/product/{{$img->img}}');" alt="{{$val->name}}"></a>
 											</div>
 										</div>
 										@endforeach
@@ -116,12 +116,12 @@
             breakpoints: {
                 // when window width is >= 320px
                 320: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 20
                 },
                 // when window width is >= 480px
                 768: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 30,
                 },
                 // when window width is >= 640px

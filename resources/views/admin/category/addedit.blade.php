@@ -62,7 +62,7 @@
                             ' : '
                             <label class="">Sort by</label>
                             <select name="sort_by" class="form-control select2" id="sort_by">
-                                <!-- <option value="1">Product</option> -->
+                                <option value="1">Product</option>
                                 <option value="2">News</option>
                                 <option value="3">pages</option>
                             </select>
@@ -97,7 +97,9 @@
                 </div>
             </div>
         </div>
+        @include('admin.layout.seooption')
     </div>
+
     <div class="col-xl-3 col-lg-3">
         <!-- <div class="card shadow mb-4">
             <div class="card-header py-3 pr-2 d-flex flex-row align-items-center justify-content-between">
