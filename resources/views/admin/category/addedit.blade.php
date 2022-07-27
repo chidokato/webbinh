@@ -99,7 +99,18 @@
         </div>
     </div>
     <div class="col-xl-3 col-lg-3">
-        <div class="card shadow mb-4">
+        <!-- <div class="card shadow mb-4">
+            <div class="card-header py-3 pr-2 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Thêm sản phẩm</h6>
+                <a target="_blank" href="admin/product/list"><button type="button" class="btn-success form-control"><i class="fas fa-external-link-alt"></i> Thêm... </button></a>
+            </div>
+            <div class="card-body">
+                
+            </div>
+
+        </div> -->
+
+        <!-- <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Images</h6>
             </div>
@@ -111,11 +122,10 @@
                     <div class="image-upload-wrap">
                         <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
                     </div>
-                    <!-- <label><input type="checkbox" name="dell_img">Xóa ảnh</label> -->
                 </div>
             </div>
 
-        </div>
+        </div> -->
 
         <!-- <div class="card shadow mb-2">
             <div class="card-body">

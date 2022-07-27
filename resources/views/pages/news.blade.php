@@ -13,6 +13,7 @@
 <link href="frontend/css/footer.css" rel="stylesheet">
 <link href="frontend/css/widget.css" rel="stylesheet">
 <link href="frontend/css/card.css" rel="stylesheet">
+<link href="frontend/css/swiper-bundle.min.css" rel="stylesheet">
 @endsection
 @section('content')
 
@@ -58,84 +59,31 @@
 
 						<div class="content">
 							{!! $category->content !!}
-						</div>
 
-						@foreach($articles as $key => $val)
-						@if($key==0)
-						<div class="col-md-8">
-							<a class="card-overlay outline-effect" href="{{ isset($val->category->slug)?$val->category->slug:'' }}/{{$val->slug}}">
-								<span class="card-overlay-img"><img src="frontend/images/space-4.gif" alt="" class="w-100" style="background-image: url('data/news/{{$val->img}}');"></span>
-								<div class="card-overlay-body">
-									<div class="card-overlay-body-wrap">
-										<div class="time-box">
-											<span>{{date('d/m',strtotime($val->created_at))}}</span>
-											<span><i class="icon-time me-1"></i>{{date('Y',strtotime($val->created_at))}}</span>
-										</div>
-										<h2 class="card-title text-truncate-set text-truncate-set-2">{{$val->name}}</h2>
-									</div>
-								</div>
-							</a>
-						</div>
-						@endif
-						@endforeach
-						<div class="col-md-4">
-							<div class="card-overlay-flex">
-								@foreach($articles as $key => $val)
-								@if($key==1)
-								<a class="card-overlay card-overlay-sm outline-effect" href="{{isset($val->category->slug)?$val->category->slug:''}}/{{$val->slug}}">
-									<span class="card-overlay-img"><img src="frontend/images/space-4.gif" alt="" class="w-100" style="background-image: url('data/news/{{$val->img}}');"></span>
-									<div class="card-overlay-body">
-										<div class="card-overlay-body-wrap">
-											<div class="time-box">
-												<span>{{date('d/m',strtotime($val->created_at))}}</span>
-												<span><i class="icon-time me-1"></i>{{date('Y',strtotime($val->created_at))}}</span>
-											</div>
-											<h2 class="card-title text-truncate-set text-truncate-set-2">{{$val->name}}</h2>
-										</div>
-									</div>
-								</a>
-								@endif
-								@if($key==2)
-								<a class="card-overlay card-overlay-sm outline-effect" href="{{isset($val->category->slug)?$val->category->slug:''}}/{{$val->slug}}">
-									<span class="card-overlay-img"><img src="frontend/images/space-4.gif" alt="" class="w-100" style="background-image: url('data/news/{{$val->img}}');"></span>
-									<div class="card-overlay-body">
-										<div class="card-overlay-body-wrap">
-											<div class="time-box">
-												<span>{{date('d/m',strtotime($val->created_at))}}</span>
-												<span><i class="icon-time me-1"></i>{{date('Y',strtotime($val->created_at))}}</span>
-											</div>
-											<h2 class="card-title text-truncate-set text-truncate-set-2">{{$val->name}}</h2>
-										</div>
-									</div>
-								</a>
-								@endif
-								@endforeach
+							@foreach($category->articles as $val)
+							<div class="row-iteam">
+								<h3>{{$val->name}}</h3>
 							</div>
+							<div class="position-relative broker-slider">
+								<div class="swiper">
+									<div class="swiper-wrapper">
+										@foreach($val->images as $img)
+										<div class="swiper-slide">
+											<div class="card ">
+												<a href="#"><img src="frontend/images/space-2.gif" class="card-img-top thumb" style="background-image: url('data/product/300/{{$img->img}}');" alt="{{$val->name}}"></a>
+											</div>
+										</div>
+										@endforeach
+									</div>
+									<div class="swiper-pagination d-lg-none"></div>
+								</div>
+								<div class="swiper-button-next d-none d-lg-flex"></div>
+								<div class="swiper-button-prev d-none d-lg-flex"></div>
+							</div>
+							@endforeach
+
 						</div>
 					</div>
-				</div>
-				<div class="row row-cols-1 g-4 horizontal-view" id="show-setting">
-					@foreach($articles as $key => $val)
-					@if($key>2)
-					<div class="col">
-						<div class="card card-s card-s4">
-							<a href="{{isset($val->category->slug)?$val->category->slug:''}}/{{$val->slug}}">
-								<span><img src="frontend/images/space-3.gif" class="card-img-top" style="background-image: url('data/news/{{$val->img}}');" alt="..."></span>
-							</a>
-							<div class="card-body">
-								<div class="card-body-wrap">
-									<h2 class="card-title"><a href="{{isset($val->category->slug)?$val->category->slug:''}}/{{$val->slug}}">{{$val->name}}</a></h2>
-									<div class="card-info">
-										<span><i class="icon-time me-2"></i>{{date('d/m/Y',strtotime($val->created_at))}}</span>
-										<span><i class="icon-user me-2"></i>{{$val->user->name}}</span>
-									</div>
-									<p class="mb-0 text-truncate-set text-truncate-set-2">{{$val->detail}}</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					@endif
-					@endforeach
 				</div>
 
 			</div>
@@ -149,5 +97,43 @@
 
 @section('script')
 <script src="frontend/js/bootstrap.bundle.min.js"></script>
+<script src="frontend/js/swiper-bundle.min.js"></script>
 <script src="frontend/js/custom.js"></script>
+
+<script src="frontend/js/swiper-bundle.min.js"></script>
+<script src="frontend/js/simpleLightbox.min.js"></script>
+
+<script>
+        var swiper1 = new Swiper(".broker-slider .swiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: ".broker-slider .swiper-pagination",
+                clickable: true,
+            },
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                // when window width is >= 480px
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                // when window width is >= 640px
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: ".broker-slider .swiper-button-next",
+                        prevEl: ".broker-slider .swiper-button-prev",
+                    },
+                }
+            },
+        });
+
+    </script>
 @endsection

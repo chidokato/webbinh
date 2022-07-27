@@ -516,7 +516,7 @@ header, a, a h5, .notify-num, .navbar .navbar-brand, .nav-link, .sec-nav .navbar
 	.breadcrumb .breadcrumb-item {font-size:12px}
 }
 
-.news-sec .content h2::after {
+.news-sec .content h2::after, .news-sec .content h3::after {
     width: 64px;
     content: '';
     position: absolute;
@@ -525,7 +525,7 @@ header, a, a h5, .notify-num, .navbar .navbar-brand, .nav-link, .sec-nav .navbar
     left: 0;
     bottom: -5px;
 }
-.news-sec .content h2{
+.news-sec .content h2, .news-sec .content h3{
     font-size: 2rem;
     -webkit-text-stroke-width: 0.8px;
     letter-spacing: .8px;

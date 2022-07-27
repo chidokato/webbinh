@@ -423,7 +423,7 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
 .sec-why-choose-us .primary-title p{ color: #fff; margin-top: 15px; }
 .service-item::before, .reason-item::before {border-width: 10px;}
 .reason-item {background: #fff;}
-.swiper-button-next::after, .swiper-button-prev::after{ color: #ddd; }
+.swiper-button-next::after, .swiper-button-prev::after{ color: #ddd; font-size: 1rem; }
 .sec-tcg{min-height: 550px;}
 .sec-tcg .tcg-content{ color: #fff; }
 .sec-why-choose-us, .sec-product-sale, .sec-product-rent {
@@ -446,10 +446,12 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
 .content img{ max-width: 100%; height: auto !important; }
 .content b, .content strong{font-weight: 100;-webkit-text-stroke-width: 0.8px !important;letter-spacing: 0.3px;}
 .news-sec .content h2{ font-size: 1.2rem }
-.news-sec .content h3{ font-size: 1rem }
+.news-sec .content h3{ font-size: 1rem; margin-bottom: 15px; }
 .content table{ width: 100% !important }
 tbody, td, tfoot, th, thead, tr{ border: 1px solid #ddd; padding: 5px }
 .content td p{ margin-bottom: 0px }
+.swiper-button-next, .swiper-button-prev {top: 40%;    height: 30px;width: 30px;}
+.swiper-button-next, .swiper-button-prev:hover{  }
 
 
 @media (max-width: 480px) {

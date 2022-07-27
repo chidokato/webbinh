@@ -112,8 +112,8 @@
                                 <td class="d-flex" style="padding-right: 15px;">
                                     <!-- <a title="view" target="_blank" href="" class="mr-2"><i class="far fa-eye"></i></a> -->
                                     <!-- <a title="nhân đôi" href="admin/product/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a> -->
-                                    <!-- <a title="sửa" href="admin/product/edit/{{$val->id}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a> -->
-                                    <!-- <a title="xóa" onclick="dell()" href="admin/product/delete/{{$val->id}}"><i class="fas fa-trash-alt"></i></a> -->
+                                    <a title="sửa" href="admin/product/edit/{{$val->id}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                                    <a title="xóa" onclick="dell()" href="admin/product/delete/{{$val->id}}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -181,8 +181,8 @@
                                 <td class="d-flex" style="padding-right: 15px;">
                                     <!-- <a title="view" target="_blank" href="" class="mr-2"><i class="far fa-eye"></i></a> -->
                                     <!-- <a title="nhân đôi" href="admin/product/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a> -->
-                                    <!-- <a title="sửa" href="admin/product/edit/{{$val->id}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a> -->
-                                    <!-- <a title="xóa" onclick="dell()" href="admin/product/delete/{{$val->id}}"><i class="fas fa-trash-alt"></i></a> -->
+                                    <a title="sửa" href="admin/product/edit/{{$val->id}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                                    <a title="xóa" onclick="dell()" href="admin/product/delete/{{$val->id}}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                             @endif
@@ -251,8 +251,8 @@
                                 <td class="d-flex" style="padding-right: 15px;">
                                     <!-- <a title="view" target="_blank" href="" class="mr-2"><i class="far fa-eye"></i></a> -->
                                     <!-- <a title="nhân đôi" href="admin/product/double/{{$val->id}}" class="mr-2"><i class="far fa-copy"></i></a> -->
-                                    <!-- <a title="sửa" href="admin/product/edit/{{$val->id}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a> -->
-                                    <!-- <a title="xóa" onclick="dell()" href="admin/product/delete/{{$val->id}}"><i class="fas fa-trash-alt"></i></a> -->
+                                    <a title="sửa" href="admin/product/edit/{{$val->id}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                                    <a title="xóa" onclick="dell()" href="admin/product/delete/{{$val->id}}"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                             @endif

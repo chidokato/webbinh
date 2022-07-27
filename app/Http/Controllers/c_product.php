@@ -64,7 +64,7 @@ class c_product extends Controller
 
     public function getadd()
     {
-        $category = category::where('sort_by',1)->orderBy('id','desc')->get();
+        $category = category::where('sort_by',2)->orderBy('id','desc')->get();
         $investor = investor::orderBy('id','desc')->get();
         $mausac = mausac::orderBy('id','desc')->get();
         $form = form::orderBy('id','desc')->get();
@@ -96,7 +96,7 @@ class c_product extends Controller
         $product->price = str_replace( array(',') , '', $Request->price );
         $product->oldprice = str_replace( array(',') , '', $Request->oldprice );
         $product->unit_price = $Request->unit;
-        $product->search_price = $product->price*$Request->unit;
+        // $product->search_price = $product->price*$Request->unit;
         $product->saleoff = str_replace( array(',') , '', $Request->saleoff );
         $product->number = $Request->number;
         $product->investor_id = $Request->investor_id;
@@ -197,7 +197,7 @@ class c_product extends Controller
     {
         $data = articles::findOrFail($id);
         $seo = seo::findOrFail($data['seo_id']);
-        $category = category::where('sort_by',1)->orderBy('id','desc')->get();
+        $category = category::where('sort_by',2)->orderBy('id','desc')->get();
         $mausac = mausac::orderBy('id','desc')->get();
         $form = form::orderBy('id','desc')->get();
         $size = size::orderBy('id','desc')->get();
