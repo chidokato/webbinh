@@ -16,6 +16,7 @@
 <link href="{{asset('')}}frontend/css/widget.css" rel="stylesheet">
 <link href="{{asset('')}}frontend/css/card.css" rel="stylesheet">
 <link href="{{asset('')}}frontend/css/article.css" rel="stylesheet">
+<link href="{{asset('')}}frontend/css/home.css" rel="stylesheet">
 <style type="text/css">
 	
 #toc{background: #f3f3f347; padding: 7px;	font-size: 14px;	text-align: justify;}
@@ -61,26 +62,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-9">
-				<div class="label-subpage"><span>{{$articles->category->name}}</span></div>
 				<div class="title-subpage">
-					<div class="time-box">
-						<span>{{date('d/m',strtotime($articles->created_at))}}</span>
-						<span><i class="icon-time me-1"></i>{{date('Y',strtotime($articles->created_at))}}</span>
-					</div>
 					<h1>{{$articles->name}}</h1>
 				</div>
 				<div class="main-content">
 					<div class="row">
-						<div class="col-md-1">
-							<div class="share-social affix">
-								<span><small>Share</small></span>
-								<ul>
-									<li><a href="{{asset('')}}#"><i class="icon-facebook"></i></a></li>
-									<div class="zalo-share-button" data-href="" data-oaid="3806913012913629376" data-layout="4" data-color="white" data-customize="false"></div>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-11">
+						<div class="col-md-12">
 							<div class="main-article" id="contents">
 								<div class="description">
 									{{$articles->detail}}
@@ -91,43 +78,36 @@
 					</div>
 					
 				</div>
-				<div class="tags">
-					<span>tags</span>
-					<ul>
-						<li><a href="{{asset('')}}#">Bất động sản</a></li>
-					</ul>
-				</div>
+				
 			</div>
 			<div class="col-lg-3 d-none d-lg-block">
-				@if($articles->style == 'on')
-				<div class="widget affix widget-list mb-3">
+				<!-- <div class="widget affix widget-list mb-3">
 					<div class="position-sticky" style="top: 4.5rem;">
 					<h4><span>Mục lục</span></h4>
 					<div id="toc"  ></div>
 					</div>
 				</div>
-				@else
 
 				<div class="widget widget-list mb-3">
 					<h4><span>Tin tức</span></h4>
 					<ul>
 						<li><a href="{{asset('')}}#"><i class="icon-next me-2"></i>Thị trường bất động sản</a></li>
 					</ul>
-				</div>
+				</div> -->
 
 				<div class="widget widget-list widget-news mb-3">
-					<h4><span>Tin tức nổi bật</span></h4>
-					<a href="{{asset('')}}#" class="news-item">
-						<span><img src="{{asset('')}}frontend/images/space-3.gif" style="background-image: url('https://media.ex-cdn.com/EXP/media.taichinhdoanhnghiep.net.vn/files/news/2021/03/26/ha-noi-diem-danh-nhieu-ong-trum-bat-dong-san-tri-hoan-nop-tien-dat-134146.jpg');" alt="" class="w-100"></span>
+					<h4><span>Tin Liên quan</span></h4>
+					@foreach($lienquan as $val)
+					<a href="{{asset('')}}{{$val->category->slug}}/{{$val->slug}}" class="news-item">
+						<span><img src="{{asset('')}}frontend/images/space-3.gif" style="background-image: url('{{asset('')}}data/news/{{$val->img}}');" alt="" class="w-100 thumb"></span>
 						<div class="news-item-body">
-							<span class="date"><i class="icon-time me-1"></i>2 ngày trước</span>
-							<p class="mb-0 text-truncate-set text-truncate-set-2">Chính chủ cần chuyển nhượng gấp căn hộ diện tích 80m2</p>
+							<span class="date"><i class="icon-time me-1"></i>{{date('d/m/Y',strtotime($val->created_at))}}</span>
+							<p class="mb-0 text-truncate-set text-truncate-set-2">{{$val->name}}</p>
 						</div>
 					</a>
-					
+					@endforeach
 				</div>
 				
-				@endif
 
 			</div>
 		</div>
@@ -137,51 +117,7 @@
 </section>
 <!------------------- END CARD ------------------->
 
-<!------------------- RELATED ------------------->
-<div class="related-sec">
-	<div class="container">
-		<div class="related">
-			<div class="cover-title-home">
-				<div class="text-start">
-					<div class="cover-title">
-						<h2><span class="cover-title-filled text-main">Tin tức liên quan</span></h2>
-					</div>
-				</div>
-			</div>
-			<div class="position-relative">
-				<div class="swiper mySwiper">
-					<div class="swiper-wrapper">
-						
-						<div class="swiper-slide">
-							<div class="card card-s card-s4">
-								<a href="{{asset('')}}#">
-									<span><img src="{{asset('')}}frontend/images/space-3.gif" class="card-img-top" style="background-image: url('https://eaglereal.net/wp-content/uploads/2020/04/phoi-canh-du-an-green-square-1024x768.jpg');" alt="..."></span>
-									<span class="view-more">Chi tiết</span>
-								</a>
-								<div class="card-body">
-									<div class="card-body-wrap">
-										<h5 class="card-title"><a href="{{asset('')}}#" class="text-truncate-set text-truncate-set-2">Nhà tiền chế cấp 4 nhiều phòng ngủ</a></h5>
-										<div class="card-info">
-											<span><i class="icon-time me-2"></i>15/02/2022</span>
-										</div>
-									</div>
-									<div class="card-text">
-										<p class="text-truncate-set text-truncate-set-2 mb-0">Vì sao giá bất động sản ven sông lại có biên độ tăng giá tốt nhất TP.HCM hiện nay?</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-					</div>
-					<div class="swiper-pagination"></div>
-				</div>
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
-			</div>
-		</div>
-	</div>
-</div>
-<!------------------- END RELATED ------------------->
+
 
 @endsection
 @section('script')

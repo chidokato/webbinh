@@ -451,7 +451,8 @@ header {background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%
 tbody, td, tfoot, th, thead, tr{ border: 1px solid #ddd; padding: 5px }
 .content td p{ margin-bottom: 0px }
 .swiper-button-next, .swiper-button-prev {height: 40px;width: 40px; background: #0091c8;}
-.swiper-button-next, .swiper-button-prev:hover{  }
+.row-news h3{ font-size: .9rem; margin-top: 5px; -webkit-text-stroke-width: 0.6px !important; letter-spacing: 0.3px;}
+.row-news .card-body-wrap>p{ font-size: .9rem; line-height: 1.1rem; }
 
 
 @media (max-width: 480px) {

@@ -140,27 +140,27 @@ class c_frontend extends Controller
         
     }
 
-    // public function articles($curl,$arurl)
-    // {
-    //     $active = $curl;
-    //     $articles = articles::where('slug',$arurl)->first();
+    public function articles($curl,$arurl)
+    {
+        $active = $curl;
+        $articles = articles::where('slug',$arurl)->first();
         
-    //     $id = $articles['id'];
-    //     $articles->hits = $articles['hits'] + 1;
-    //     $articles->save();
+        $id = $articles['id'];
+        $articles->hits = $articles['hits'] + 1;
+        $articles->save();
 
-    //     $lienquan = articles::where('status','true')
-    //         ->where('category_id',$articles['category_id'])
-    //         ->whereNotin('id',[$id])
-    //         ->take(8)
-    //         ->get();
-    //     if ($articles['sort_by'] == 1) {
-    //         return view('pages.articles_product_bds',['active'=>$active,'articles'=>$articles,'lienquan'=>$lienquan]);
-    //     }
-    //     if ($articles['sort_by'] == 2) {
-    //         return view('pages.articles',['active'=>$active,'articles'=>$articles,'lienquan'=>$lienquan]);
-    //     }
-    // }
+        $lienquan = articles::where('status','true')
+            ->where('category_id',$articles['category_id'])
+            ->whereNotin('id',[$id])
+            ->take(8)
+            ->get();
+        if ($articles['sort_by'] == 1) {
+            return view('pages.articles_product_bds',['active'=>$active,'articles'=>$articles,'lienquan'=>$lienquan]);
+        }
+        if ($articles['sort_by'] == 2) {
+            return view('pages.articles',['active'=>$active,'articles'=>$articles,'lienquan'=>$lienquan]);
+        }
+    }
 
     // tìm kiếm
     // public function search(Request $Request)

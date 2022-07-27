@@ -17,9 +17,6 @@
 @endsection
 @section('content')
 
-<style type="text/css">
-	
-</style>
 <div class="cover" style="background-image: url(frontend/images/sub-header.jpg);" >
 	<div class="container">
 		<hr>
@@ -56,33 +53,24 @@
 				
 				<div class="news-hightlight">
 					<div class="row">
-						<!-- <h2 class="text-uppercase title-subpage">{{$category->name}}</h2> -->
-
 						<div class="content">
+							<h2>{{$category->name}}</h2>
 							{!! $category->content !!}
-
-							@foreach($category->articles as $val)
-							<div class="row-iteam">
-								<h3>{{$val->name}}</h3>
-							</div>
-							<div class="position-relative broker-slider">
-								<div class="swiper">
-									<div class="swiper-wrapper">
-										@foreach($val->images as $img)
-										<div class="swiper-slide">
-											<div class="card ">
-												<img src="frontend/images/space-2.gif" class="card-img-top thumb" style="background-image: url('data/product/{{$img->img}}');" alt="{{$val->name}}">
-											</div>
-										</div>
-										@endforeach
+						</div>
+						<div class="row row-cols-2 row-cols-lg-3 g-3 g-lg-3 grid-view" style="margin-top: 0px">
+							@foreach($articles as $val)
+							<div class="col" style="margin-top: 0px; margin-bottom: 20px;">
+								<div class="row-news">
+									<a href="{{$val->category->slug}}/{{$val->slug}}">
+										<span><img src="frontend/images/space-3.gif" class="card-img-top thumb" style="background-image: url('data/news/{{$val->img}}');" alt="{{$val->name}}"></span>
+									</a>
+									<div class="card-body-wrap">
+										<h3 class=""><a href="{{$val->category->slug}}/{{$val->slug}}" class="text-truncate-set text-truncate-set-2" style="display: -webkit-box;">{{$val->name}}</a></h3>
+										<p class="text-truncate-set text-truncate-set-2">{{$val->detail}}</p>
 									</div>
-									<div class="swiper-pagination d-lg-none"></div>
 								</div>
-								<div class="swiper-button-next d-none d-lg-flex"></div>
-								<div class="swiper-button-prev d-none d-lg-flex"></div>
 							</div>
 							@endforeach
-
 						</div>
 					</div>
 				</div>
@@ -101,40 +89,4 @@
 <script src="frontend/js/swiper-bundle.min.js"></script>
 <script src="frontend/js/custom.js"></script>
 
-<script src="frontend/js/swiper-bundle.min.js"></script>
-<script src="frontend/js/simpleLightbox.min.js"></script>
-
-<script>
-        var swiper1 = new Swiper(".broker-slider .swiper", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: {
-                el: ".broker-slider .swiper-pagination",
-                clickable: true,
-            },
-            // Responsive breakpoints
-            breakpoints: {
-                // when window width is >= 320px
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 20
-                },
-                // when window width is >= 480px
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                },
-                // when window width is >= 640px
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                    navigation: {
-                        nextEl: ".broker-slider .swiper-button-next",
-                        prevEl: ".broker-slider .swiper-button-prev",
-                    },
-                }
-            },
-        });
-
-    </script>
 @endsection
