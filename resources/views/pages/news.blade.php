@@ -71,7 +71,7 @@
 										@foreach($val->images as $img)
 										<div class="swiper-slide">
 											<div class="card ">
-												<a href="#"><img src="frontend/images/space-2.gif" class="card-img-top thumb" style="background-image: url('data/product/{{$img->img}}');" alt="{{$val->name}}"></a>
+												<img src="frontend/images/space-2.gif" class="card-img-top thumb" style="background-image: url('data/product/{{$img->img}}');" alt="{{$val->name}}">
 											</div>
 										</div>
 										@endforeach
