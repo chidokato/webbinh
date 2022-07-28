@@ -129,7 +129,7 @@ header, a, a h5, .notify-num, .navbar .navbar-brand, .nav-link, .sec-nav .navbar
 .swiper-button-next {right:-80px}
 .swiper-button-next:hover, .swiper-button-prev:hover {background-color:var(--sub-color); border-color:var(--sub-color); color:#fff}
 
-.breadcrumb {margin-bottom:0}
+.breadcrumb {margin-bottom:0; margin-top: 10px;}
 .breadcrumb .breadcrumb-item {padding:16px 0 18px; font-size:14px}
 .breadcrumb-item+.breadcrumb-item::before {padding-left:.25rem; padding-right:.25rem}
 
@@ -451,7 +451,9 @@ header, a, a h5, .notify-num, .navbar .navbar-brand, .nav-link, .sec-nav .navbar
 
 	.container {padding-left: 16px;padding-right: 16px;}
 
-	.breadcrumb .breadcrumb-item {padding-top:8px;padding-bottom:10px;font-size: 12px;}
+	.breadcrumb .breadcrumb-item {padding-top:0px;padding-bottom:0px;font-size: 12px;    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;}
 	 .main-content-wrap, .main-content-wrap .primary-title {padding-top:0}
 	 .main-content-wrap .primary-title {padding-bottom:12px}
 	.text-quote span:nth-of-type(1), .text-quote span:nth-of-type(2) {display:none}
@@ -547,9 +549,11 @@ header, a, a h5, .notify-num, .navbar .navbar-brand, .nav-link, .sec-nav .navbar
 .rows-contact h4{ font-size: 1rem; -webkit-text-stroke-width: 0.8px !important;letter-spacing: 0.3px; margin-bottom: 6px; }
 .rows-contact p{ margin-bottom: 0px; }
 .title-contact{ font-size: 1rem; -webkit-text-stroke-width: 0.8px !important;letter-spacing: 0.3px; margin-bottom: 30px; }
+.news-sec .main-article img{ width: 100% !important; height: auto !important; }
 
 @media (max-width: 480px) {
 	.rows-contact .col-md-2 { width: 27%; }
 	.rows-contact .col-md-10 { width: 73%; }
 	.input-contact p{ font-size: 1rem; }
+	.title-subpage {margin-bottom: 0px;}
 }
