@@ -292,7 +292,7 @@ header nav li.notification .message i {
   header nav .navbar-nav.mb-lg-0 li:last-child .nav-link {border-bottom:0; padding-bottom:32px}
   header .navbar-expand-lg .mb-lg-0 .nav-link:hover:before, header .navbar-expand-lg .mb-lg-0 .active .nav-link:before {left: 0px;right: initial;bottom: -1px;height: 2px;width: 48px;}
   header nav .navbar-nav.mb-lg-0 .dropdown-menu {background: #fff;padding: 0;margin: 0;border-radius: 0;order: 3;flex: 0 0 100%;}
-	header nav .navbar-nav.mb-lg-0 .dropdown-menu li {margin:0;border-bottom: 1px solid rgb(15 26 51);padding: 0 12px;}
+	header nav .navbar-nav.mb-lg-0 .dropdown-menu li {margin:0;padding: 0 12px;}
 	header nav .navbar-nav.mb-lg-0 .dropdown-menu li:last-child {border:none}
 	header nav .navbar-nav.mb-lg-0 .dropdown-menu a {color:#fff;font-size:14px;padding: 12px 0;display: block;}
   
