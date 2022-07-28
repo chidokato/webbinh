@@ -13,7 +13,7 @@
 					</div>
 				</button>
 			</div>
-	
+
 		  <div class="navbar-collapse flex-grow-1" id="navbarsExample07XL">
 			<ul class="collapse navbar-nav mb-lg-0">
 				<li class="nav-item {{ isset($active) && $active=='' ? 'active':'' }}">
@@ -39,9 +39,9 @@
 				</li>
 				@endif
 				@endforeach
-				<li> <div id="translate_select"></div> </li>
 			</ul>
 			
+			<div id="translate_select"></div>
 
 		  </div>
 		</div>

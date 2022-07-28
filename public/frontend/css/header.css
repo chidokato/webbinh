@@ -153,18 +153,18 @@ header nav li.notification .message i {
 .col-lg-3 .toggle-nv.active {right: 64%;}
 
 .goog-te-gadget{
-      height: 32px;
+      height: 36px;
     overflow: hidden;
-    margin-top: 19px;
+    margin-top: 0px;
 }
 .scrollDown .goog-te-gadget{
-      height: 32px;
+      height: 36px;
     overflow: hidden;
-    margin-top: 13px;
+    margin-top: 0;
 }
 .goog-te-gadget .goog-te-combo {
     margin: 4px 0;
-    padding: 4px;
+    padding: 6px;
     border-radius: 3px;
 }
 
@@ -312,7 +312,11 @@ header nav li.notification .message i {
 	header .navbar-expand-lg .navbar-nav.ml-auto .nav-icon.notification .dropdown-menu .news-item > span::after {/* top: 10%; */}
 	header .navbar-expand-lg .navbar-nav.ml-auto .nav-icon.notification .dropdown-menu .widget-list.widget-news {display:block}
 	header nav li.notification {position:static}
+
+  #translate_select{position: absolute; top: 6px; right: 10px;}
+  .navhome{ z-index: 9999999999999; }
 }
+
 
 @media (max-width:360px) {
 	header .navbar-expand-lg .navbar-nav.ml-auto .nav-icon.notification .dropdown-menu {/* right:-40px; */}
@@ -330,4 +334,6 @@ header nav .navbar-nav.mb-lg-0 .dropdown-menu a {
 .navbar-collapse ul li select:focus-visible{
   outline: none;
 }
-#translate_select{ margin-left: 10px; }
+#translate_select{ margin-left: 10px;  }
+
+.goog-te-banner{ display: none; }
