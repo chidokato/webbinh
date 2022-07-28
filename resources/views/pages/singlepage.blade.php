@@ -34,69 +34,46 @@
 <!------------------- CARD ------------------->
 <section class="card-grid news-sec">
 	<div class="container">
+		
 		<div class="row">
-			<div class="col-lg-6">
-				<div class="content">
-					<h2>Thông tin</h2>
-				</div>
-				<h3 class="title-contact">VĂN PHÒNG VIỆT NAM: CÔNG TY TNHH DS TECH VINA</h3>
-				<div class="rows-contact">
-					<div class="images"><img src="{{asset('')}}frontend/images/vitri.png"></div>
-					<div class="input-contact">
-						<h4>Địa chỉ</h4>
-						<p>Khu Đồng Trại, xã Phượng Mao, Huyện Quế Võ, Tỉnh Bắc Ninh, Việt Nam</p>
-					</div>
-				</div>
-				<div class="rows-contact">
-					<div class="images"><img src="{{asset('')}}frontend/images/vitri.png"></div>
-					<div class="input-contact">
-						<h4>Địa chỉ</h4>
-						<p>Khu Đồng Trại, xã Phượng Mao, Huyện Quế Võ, Tỉnh Bắc Ninh, Việt Nam</p>
-					</div>
-				</div>
-				<div class="rows-contact">
-					<div class="images"><img src="{{asset('')}}frontend/images/vitri.png"></div>
-					<div class="input-contact">
-						<h4>Địa chỉ</h4>
-						<p>Khu Đồng Trại, xã Phượng Mao, Huyện Quế Võ, Tỉnh Bắc Ninh, Việt Nam</p>
-					</div>
+			<!-- <div class="col-lg-3 d-none d-lg-block"> -->
+			<div class="col-lg-3 d-lg-block">
+				<div class="widget widget-list mb-3 sticky-70">
+					<h4><span>{{$category->name}}</span></h4>
+					<ul>
+						@foreach($sub_cat as $val)
+						<li><a class="<?php if($active == $val->slug){ echo "active";} ?>" href="{{$val->slug}}"><i class="icon-next me-2"></i>{{$val->name}}</a></li>
+						@endforeach
+					</ul>
 				</div>
 			</div>
-			<div class="col-lg-6">
-				<div class="row">
-					<div class="content">
-						<h2>Gửi liên hệ</h2>
+
+			<div class="col-lg-9">
+				<div class="news-hightlight">
+					<div class="row">
+						<div class="content">
+							{!! $category->content !!}
+						</div>
+						<div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3 grid-view" style="margin-top: 0px">
+							@foreach($articles as $val)
+							<div class="col" style="margin-top: 0px; margin-bottom: 20px;">
+								<div class="row-news">
+									<a href="{{$val->category->slug}}/{{$val->slug}}">
+										<span><img src="frontend/images/space-3.gif" class="card-img-top thumb" style="background-image: url('data/news/{{$val->img}}');" alt="{{$val->name}}"></span>
+									</a>
+									<div class="card-body-wrap">
+										<h3 class=""><a href="{{$val->category->slug}}/{{$val->slug}}" class="text-truncate-set" style="display: -webkit-box;">{{$val->name}}</a></h3>
+										<!-- <p class="text-truncate-set">{{$val->detail}}</p> -->
+									</div>
+								</div>
+							</div>
+							@endforeach
+						</div>
 					</div>
-                    <form class="lienhe">
-                    	<div class="col-md-12">
-	                        <div class="form-group">
-	                            <label>Họ và Tên</label> 
-	                            <input name="name" placeholder="Họ và Tên" type="text" class="form-control">
-	                        </div>
-	                    </div>
-	                    <div class="col-md-12">
-	                        <div class="form-group">
-	                            <label>Địa chỉ email</label> 
-	                            <input name="name" placeholder="Địa chỉ email" type="text" class="form-control">
-	                        </div>
-	                    </div>
-	                    <div class="col-md-12">
-	                        <div class="form-group">
-	                            <label>Số điện thoại</label> 
-	                            <input name="name" placeholder="Số điện thoại" type="text" class="form-control">
-	                        </div>
-	                    </div>
-	                    <div class="col-md-12">
-	                        <div class="form-group">
-	                            <label>Nội dung</label> 
-	                            <textarea class="form-control" placeholder="Nội dung" rows="5"></textarea>
-	                        </div>
-	                    </div>
-	                    <button>Gửi đi</button>
-                    </form>
-                    
-                </div>
+				</div>
+
 			</div>
+			
 		</div>
 	</div>
 </section>

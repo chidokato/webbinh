@@ -1,13 +1,7 @@
-<b>Khách hàng - {{asset('')}}</b>
-<br>
-{{$name}}
-<br>
-{{$email}}
-<br>
-{{$phone}}
-<br>
-{{$content}}
-<br>
-{{$link}}
-<br>
-{{$date}}
+<p>Khách hàng đăng ký nhận báo giá:</p>
+<p>Tên khách hàng: {{$name}}</p>
+<p>Địa chỉ email: {{$email}}</p>
+<p>Số điện thoại: {{$phone}}</p>
+<p>Nội dung: {{$content}}</p>
+<p>Link: {{$link}}</p>
+<p>Thời gian: {{$date}}</p>

@@ -54,7 +54,7 @@
 						<div class="content">
 							{!! $category->content !!}
 						</div>
-						<div class="row row-cols-2 row-cols-lg-3 g-3 g-lg-3 grid-view" style="margin-top: 0px">
+						<div class="row row-cols-1 row-cols-lg-3 g-3 g-lg-3 grid-view" style="margin-top: 0px">
 							@foreach($articles as $val)
 							<div class="col" style="margin-top: 0px; margin-bottom: 20px;">
 								<div class="row-news">
@@ -62,8 +62,8 @@
 										<span><img src="frontend/images/space-3.gif" class="card-img-top thumb" style="background-image: url('data/news/{{$val->img}}');" alt="{{$val->name}}"></span>
 									</a>
 									<div class="card-body-wrap">
-										<h3 class=""><a href="{{$val->category->slug}}/{{$val->slug}}" class="text-truncate-set text-truncate-set-2" style="display: -webkit-box;">{{$val->name}}</a></h3>
-										<p class="text-truncate-set text-truncate-set-2">{{$val->detail}}</p>
+										<h3 class=""><a href="{{$val->category->slug}}/{{$val->slug}}" class="text-truncate-set" style="display: -webkit-box;">{{$val->name}}</a></h3>
+										<!-- <p class="text-truncate-set">{{$val->detail}}</p> -->
 									</div>
 								</div>
 							</div>

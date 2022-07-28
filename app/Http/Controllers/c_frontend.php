@@ -75,6 +75,8 @@ class c_frontend extends Controller
     {
         $active = $curl;
         $category = category::where('slug',$curl)->first();
+        if ($curl=='bao-gia') { $active = 'bao-gia'; return view('pages.baogia',['category'=>$category, 'active'=>$active]); }
+        if ($curl=='lien-he') { $active = 'lien-he'; return view('pages.contact',['category'=>$category, 'active'=>$active]); }
         
         $cates = category::where('parent', $category["id"])->get();
         $cat_array = [$category["id"]];
@@ -220,6 +222,7 @@ class c_frontend extends Controller
     {
         $head_setting = setting::where('id',1)->first();
         $mail = $head_setting['email'];
+        $main = $head_setting['name'];
 		$this->validate($Request,['phone' => 'Required'],[] );
         $name = $Request->name;
         $phone = $Request->phone;
@@ -228,12 +231,12 @@ class c_frontend extends Controller
         $content = $Request->content;
 		$date = date('m/d/Y h:i:s', time());
         
-        Mail::send('email_feedback', array('name'=>$name,'phone'=>$phone,'email'=>$email,'link'=>$link,'content'=>$content,'date'=>$date) , function($message) use ($mail){
-            $message->from($mail, 'hado.charmvillas.org');
-            $message->to($mail, 'hado.charmvillas.org')->subject('Thông tin khách hàng');
+        Mail::send('email_feedback', array('name'=>$name,'phone'=>$phone,'email'=>$email,'link'=>$link,'content'=>$content,'date'=>$date) , function($message) use ($mail, $main){
+            $message->from($mail, $main);
+            $message->to($mail, $main)->subject('Thông tin khách hàng');
         });
-        //return view('pages.camon')->with('Alerts','Gửi thành công');
-		return redirect('/')->with('Alerts','Thành công');
+        return view('pages.camon')->with('Alerts','Gửi thành công');
+		// return redirect('/')->with('Alerts','Thành công');
     }
 
     public function wishlist()
