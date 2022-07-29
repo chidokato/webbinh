@@ -75,6 +75,7 @@ class c_frontend extends Controller
     {
         $active = $curl;
         $category = category::where('slug',$curl)->first();
+        $menu = menu::where('slug',$curl)->first();
         if ($curl=='bao-gia') { $active = 'bao-gia'; return view('pages.baogia',['category'=>$category, 'active'=>$active]); }
         if ($curl=='lien-he') { $active = 'lien-he'; return view('pages.contact',['category'=>$category, 'active'=>$active]); }
         
@@ -93,9 +94,9 @@ class c_frontend extends Controller
         }
 
         if($category->parent == 0){
-            $sub_cat = category::where('parent',$category->id)->orderBy('id','asc')->get();
+            $sub_cat = menu::where('parent',$menu->id)->orderBy('view','asc')->get();
         }else{
-            $sub_cat = category::where('parent',$category->parent)->orderBy('id','asc')->get();
+            $sub_cat = menu::where('parent',$menu->parent)->orderBy('view','asc')->get();
         }
 
         if ($category['sort_by'] == 1) {
