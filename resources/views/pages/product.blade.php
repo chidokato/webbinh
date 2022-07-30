@@ -61,12 +61,12 @@
 
 						<div class="content ">
 							{!! $category->content !!}
-
-							@if($category->slug == 'thu-vien')
+							
 							@foreach($category->articles as $val)
 							<div class="row-iteam">
 								<h3>{{$val->name}}</h3>
 							</div>
+							@if($val->style == 'on')
 							<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 g-lg-3 sec-gallery">
 								@foreach($val->images as $key => $img)
 								<div class="col">
@@ -76,12 +76,7 @@
 								</div>
 								@endforeach
 							</div>
-							@endforeach
 							@else
-							@foreach($category->articles as $val)
-							<div class="row-iteam">
-								<h3>{{$val->name}}</h3>
-							</div>
 							<div class="position-relative broker-slider">
 								<div class="swiper">
 									<div class="swiper-wrapper">
@@ -98,9 +93,8 @@
 								<div class="swiper-button-next d-none d-lg-flex"></div>
 								<div class="swiper-button-prev d-none d-lg-flex"></div>
 							</div>
-							@endforeach
 							@endif
-
+							@endforeach
 						</div>
 					</div>
 				</div>

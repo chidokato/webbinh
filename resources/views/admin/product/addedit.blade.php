@@ -46,6 +46,17 @@
                             ' : '' !!} -->
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="checkboxes__item">
+                              <label class="checkbox style-e">
+                                <input name="style" {{ isset($data) && $data->style == 'on' ? 'checked':'' }} type="checkbox"/>
+                                <div class="checkbox__checkmark"></div>
+                                <div class="checkbox__body">Thư viện ảnh</div>
+                              </label>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="card-body">
                         <div class="form-group">

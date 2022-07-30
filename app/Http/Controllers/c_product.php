@@ -128,6 +128,7 @@ class c_product extends Controller
         $articles->slug = changeTitle($Request->name);
         $articles->detail = $Request->detail;
         $articles->content = $Request->content;
+        $articles->style = $Request->style;
         $articles->hits = '50';
         $articles->status = 'true';
         // thêm ảnh
@@ -231,6 +232,7 @@ class c_product extends Controller
         $articles->slug = $Request->slug;
         $articles->detail = $Request->detail;
         $articles->content = $Request->content;
+        $articles->style = $Request->style;
         $articles->category_id = $Request->category_id;
         if(isset($Request->category_sku)){$articles->category_sku = implode(',', $Request->category_sku);}
         else{$articles->category_sku='';}
