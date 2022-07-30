@@ -71,7 +71,7 @@
 								@foreach($val->images as $key => $img)
 								<div class="col">
 									<a class="card-overlay card-overlay-sm outline-effect" title="{{$key+1}}/{{count($val->images)}}" href="data/product/{{$img->img}}">
-										<span class="card-overlay-img"><img src="frontend/images/space-4.gif" alt="" class="w-100" style="background-image: url('data/product/{{$img->img}}');"></span>
+										<span class="card-overlay-img"><img src="frontend/images/space-2.gif" alt="" class="w-100" style="background-image: url('data/product/{{$img->img}}');"></span>
 									</a>
 								</div>
 								@endforeach
