@@ -247,7 +247,7 @@ header, a, a h5, .notify-num, .navbar .navbar-brand, .nav-link, .sec-nav .navbar
 
 .related-sec {background-color: #f5f5f5; padding-top: 56px; padding-bottom: 40px;}
 .related-sec .swiper {padding-top:6px}
-.sec-gallery {background-color: #f5f5f5; padding-bottom: 2px;}
+.sec-gallery {}
 
 .card-overlay.video .card-overlay-body::before {width: 72px;height: 72px;background-color: var(--sub-color);box-shadow: 0 0 0 6px rgba(255,255,255,.5);border-radius: 50%;}
 .card-overlay.video .card-overlay-body::after {border-left: 14px solid #fff;border-top: 10px solid transparent;border-right: 0;border-bottom: 10px solid transparent;width: 8px;height: 8px;left: calc(12% + 32px) !important;}

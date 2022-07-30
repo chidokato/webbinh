@@ -14,6 +14,7 @@
 <link href="frontend/css/widget.css" rel="stylesheet">
 <link href="frontend/css/card.css" rel="stylesheet">
 <link href="frontend/css/swiper-bundle.min.css" rel="stylesheet">
+<link href="frontend/css/simpleLightbox.css" rel="stylesheet">
 @endsection
 @section('content')
 
@@ -58,9 +59,25 @@
 					<div class="row">
 						<!-- <h2 class="text-uppercase title-subpage">{{$category->name}}</h2> -->
 
-						<div class="content">
+						<div class="content ">
 							{!! $category->content !!}
 
+							@if($category->slug == 'thu-vien')
+							@foreach($category->articles as $val)
+							<div class="row-iteam">
+								<h3>{{$val->name}}</h3>
+							</div>
+							<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 g-lg-3 sec-gallery">
+								@foreach($val->images as $key => $img)
+								<div class="col">
+									<a class="card-overlay card-overlay-sm outline-effect" title="{{$key+1}}/{{count($val->images)}}" href="data/product/{{$img->img}}">
+										<span class="card-overlay-img"><img src="frontend/images/space-4.gif" alt="" class="w-100" style="background-image: url('data/product/{{$img->img}}');"></span>
+									</a>
+								</div>
+								@endforeach
+							</div>
+							@endforeach
+							@else
 							@foreach($category->articles as $val)
 							<div class="row-iteam">
 								<h3>{{$val->name}}</h3>
@@ -82,6 +99,7 @@
 								<div class="swiper-button-prev d-none d-lg-flex"></div>
 							</div>
 							@endforeach
+							@endif
 
 						</div>
 					</div>
@@ -101,8 +119,21 @@
 <script src="frontend/js/swiper-bundle.min.js"></script>
 <script src="frontend/js/custom.js"></script>
 
-<script src="frontend/js/swiper-bundle.min.js"></script>
 <script src="frontend/js/simpleLightbox.min.js"></script>
+
+<script>
+		var swiper = new Swiper(".swiper.gallery-mobile", {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			pagination: {
+				el: ".swiper.gallery-mobile .swiper-pagination",
+				clickable: true,
+			},	
+		});
+		var lightbox = new SimpleLightbox({
+			elements: '.sec-gallery .card-overlay',
+		});
+</script>
 
 <script>
         var swiper1 = new Swiper(".broker-slider .swiper", {
