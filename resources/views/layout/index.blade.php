@@ -38,14 +38,69 @@
 
 @yield('css')
 <link href="frontend/css/home.css" rel="stylesheet">
-<!-- ================= js ================== --> 
 
+<!-- google dịch -->
+<style type="text/css">
+  body{
+    top:0 !important;
+}
+.goog-te-banner-frame {
+    display: none;
+    height: 0 !important;
+    visibility: hidden
+}
+</style>
+<!-- google dịch -->
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'vi'}, 'translate_select');
-    }
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({ includedLanguages: 'vi,en,ko', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+}
+
+function triggerHtmlEvent(element, eventName) {
+var event;
+if (document.createEvent) {
+event = document.createEvent('HTMLEvents');
+event.initEvent(eventName, true, true);
+element.dispatchEvent(event);
+} else {
+event = document.createEventObject();
+event.eventType = eventName;
+element.fireEvent('on' + event.eventType, event);
+}
+}
+$(document).ready(function () {
+$(document).on('click', '.languageOption', function () {
+var value = $(this).attr("data-lang");
+
+updateLanguage(value);
+
+})
+
+
+function updateLanguage(value) {
+var selectIndex = 0;
+var a = document.querySelector("#google_translate_element select");
+switch (value) {
+case "vi":
+selectIndex = 0;
+break;
+case "en":
+selectIndex = 3;
+break;
+case "ko":
+selectIndex = 1;
+break;
+}
+a.selectedIndex = selectIndex;
+a.dispatchEvent(new Event('change'));
+}
+})
 </script>
+<!-- google dịch -->
+<!-- google dịch -->
+
+<!-- ================= js ================== --> 
 
 {!! $head_setting->codeheader !!}
 

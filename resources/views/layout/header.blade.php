@@ -41,7 +41,7 @@
 				@endforeach
 			</ul>
 			
-			<div id="translate_select"></div>
+			<div id='google_translate_element'></div>
 
 		  </div>
 		</div>
